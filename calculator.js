@@ -12,7 +12,7 @@
     const month = BASE + over * OVERAGE;
     $("r-calls").textContent = calls;
     $("r-minutes").textContent = Math.round(minutes).toLocaleString("en-US");
-    $("r-month").textContent = usd(month) + " / month";
+    $("r-month").textContent = usd(month);
     $("r-year").textContent = usd(month * 12);
     $("r-call").textContent = "$" + (month / calls).toFixed(2);
     $("r-note").textContent = over > 0

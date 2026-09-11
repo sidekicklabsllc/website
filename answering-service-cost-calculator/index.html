@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medical Answering Service Cost Calculator | Samantha</title>
-  <meta name="description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
+  <meta name="description" content="Pick your practice size and see what a medical answering service costs per month and year, next to the cost of one more front-desk hire, from 2026 data." />
   <link rel="canonical" href="https://www.samantha-medical.com/answering-service-cost-calculator/" />
   <meta name="theme-color" content="#faf7f2" />
   <meta property="og:type" content="website" />
@@ -12,14 +12,14 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://www.samantha-medical.com/answering-service-cost-calculator/" />
   <meta property="og:title" content="Medical Answering Service Cost Calculator | Samantha" />
-  <meta property="og:description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
+  <meta property="og:description" content="Pick your practice size and see what a medical answering service costs per month and year, next to the cost of one more front-desk hire, from 2026 data." />
   <meta property="og:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Samantha, the after-hours AI receptionist for medical practices" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Medical Answering Service Cost Calculator | Samantha" />
-  <meta name="twitter:description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
+  <meta name="twitter:description" content="Pick your practice size and see what a medical answering service costs per month and year, next to the cost of one more front-desk hire, from 2026 data." />
   <meta name="twitter:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,8 +78,9 @@
       <p class="kicker">Free calculator</p>
       <h1>What does a medical answering service really cost?</h1>
       <p class="lede">
-        Pick your practice size. We estimate what a traditional human answering service
-        costs per month and per year, using published 2026 rates and the assumptions listed below.
+        Pick your practice size. We estimate what a traditional human answering service costs
+        per month and per year, next to what one more front-desk employee costs, using published
+        2026 rates and the assumptions listed below.
       </p>
     </div>
   </header>
@@ -93,18 +94,26 @@
           <button type="button" class="preset" data-calls="300" aria-pressed="false">4 to 10 providers</button>
           <button type="button" class="preset" data-calls="600" aria-pressed="false">10+ or multi-site</button>
         </div>
-        <p class="hint" style="color:var(--ink-faint);font-size:0.85rem">About <strong id="r-calls">100</strong> after-hours and overflow calls a month, <strong id="r-minutes">250</strong> operator minutes.</p>
+        <p class="hint" style="color:var(--ink-faint);font-size:0.85rem">About <strong id="r-calls">100</strong> after-hours and overflow calls a month, <strong id="r-minutes">250</strong> operator minutes. Two ways to cover them without an AI receptionist:</p>
 
-        <div class="result-big" style="margin-top:1.3rem" aria-live="polite">
-          <div class="label">Estimated cost of a human answering service</div>
-          <div class="value" id="r-month">$330 / month</div>
-          <div class="sub"><span id="r-year">$3,960</span> a year, about <span id="r-call">$3.30</span> per call</div>
+        <div class="compare-grid" aria-live="polite">
+          <div class="result-big">
+            <div class="label">Human answering service</div>
+            <div class="value" id="r-month">$330</div>
+            <div class="sub">per month &middot; <span id="r-year">$3,960</span> a year &middot; about <span id="r-call">$3.30</span> per call</div>
+            <p class="result-note" id="r-note"></p>
+          </div>
+          <div class="result-big result-alt">
+            <div class="label">One more front-desk employee</div>
+            <div class="value">$5,475</div>
+            <div class="sub">per month &middot; $65,700 a year, fully loaded</div>
+            <p class="result-note">Covers business hours only. Nights, weekends, and holidays still go to voicemail or a service.</p>
+          </div>
         </div>
-        <p id="r-note" class="hint" style="color:var(--ink-soft);font-size:0.9rem"></p>
 
         <div class="calc-cta">
           <a class="btn btn-primary" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Get a Samantha quote</a>
-          <p class="demo-note">Samantha is a flat monthly fee with no per-minute overage. Pricing is quoted per practice on a 15-minute call.</p>
+          <p class="demo-note">Samantha is priced per provider per month, with included minutes and a per-minute rate well below any answering service. Pricing is quoted on a 15-minute call.</p>
         </div>
       </div>
 
@@ -115,6 +124,7 @@
           <li><strong>Every minute past 250 costs $1.50.</strong> Published overage rates run from $1.20 (Ambs) to $2.99 (PATLive). We use the middle.</li>
           <li><strong>A call takes 2.5 minutes of operator time.</strong> Vendors quote 2 minutes for message-taking and 3 for calls with scheduling.</li>
           <li><strong>Practice size sets call volume.</strong> A 1 to 3 provider practice sends its service about 100 calls a month, 4 to 10 providers about 300, larger or multi-site groups about 600, following <a href="https://helpware.com/blog/medical-answering-service-pricing" rel="nofollow noopener" target="_blank">Helpware's 2026 cost guide</a>.</li>
+          <li><strong>A front-desk hire costs about $65,700 a year.</strong> The U.S. Bureau of Labor Statistics puts the May 2025 median wage for <a href="https://www.bls.gov/ooh/office-and-administrative-support/secretaries-and-administrative-assistants.htm" rel="nofollow noopener" target="_blank">medical secretaries and administrative assistants</a> at $45,930. Benefits, payroll taxes, and paid leave add another 30 percent of total compensation in private industry (<a href="https://www.bls.gov/news.release/ecec.nr0.htm" rel="nofollow noopener" target="_blank">BLS, March 2026</a>), so the loaded cost is roughly $65,700, or $5,475 a month, before recruiting, training, and turnover. That buys about 40 hours a week during business hours.</li>
           <li><strong>Not included:</strong> setup fees ($50 to $85 at some services), HIPAA surcharges, holiday rates, and the 28-day billing cycles some services use, which add a thirteenth invoice each year. All of these push the real number higher.</li>
         </ul>
         <p>Prices were collected from public pricing pages in September 2026 and may have changed. This is a planning estimate, not a quote from any vendor.</p>
