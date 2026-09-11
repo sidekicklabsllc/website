@@ -104,17 +104,12 @@
 
       <h2>What Samantha does with a referral</h2>
       <p>
-        Your front desk enters the referred patients in Samantha Hub, as they arrive or as a batch to
-        clear a backlog, and starts the calls. Samantha works the list one patient at a time:
+        Your front desk enters the referred patients in Samantha Hub and starts the calls. Samantha
+        calls each one the same day, introduces the practice and the referring provider, confirms she
+        is speaking with the right person before saying anything else, gets them registered, and books
+        their first visit with the provider the referral names. Every call lands in your morning
+        briefing with the recording, the transcript, and a flag on anything that needs a person.
       </p>
-      <ol>
-        <li><strong>Calls and introduces the practice.</strong> The opening line is fixed, not generated: she says she is calling from your practice about a referral from the referring provider, and asks for the patient by first name.</li>
-        <li><strong>Verifies identity before saying anything else.</strong> She confirms date of birth against the referral. Until that matches, nothing about the referral is discussed. The only thing she ever discloses is the referring provider's name, never the reason for the referral.</li>
-        <li><strong>Confirms or completes registration.</strong> Details the referral already carries, such as address and insurance, are read back one at a time for the patient to confirm. Anything missing is collected. If the patient corrects something, the patient's answer wins, and the discrepancy is flagged for staff.</li>
-        <li><strong>Books the first visit.</strong> With the provider the referral names, against real availability, reading the appointment back before committing. A patient who already has a chart skips registration and goes straight to scheduling.</li>
-        <li><strong>Leaves a clean message on voicemail.</strong> A callback request with no patient details in it. Nothing about the referral is left on a machine.</li>
-        <li><strong>Files the outcome.</strong> Every call lands in the briefing with the recording and transcript, and any mismatch between the referral and what the patient said is marked urgent so a person reviews it before the visit.</li>
-      </ol>
 
       <div class="callout"><p><strong>What she will not do.</strong> Samantha never discusses why the patient was referred, never answers a clinical question, and never gives medication or triage guidance. If the patient asks, she offers to book the visit or take a message for the clinician. Emergency handling is the same as on every call: hang up and dial 911.</p></div>
 
@@ -122,36 +117,19 @@
       <p>
         Referral outreach today is mostly text and email, which patients ignore at rates vendors
         themselves put at 50 to 70 percent. A phone call from the practice, made the day the referral
-        arrives rather than three to seven days later, is the format that actually converts, and a
-        quality-improvement study cited by Zocdoc reached 80 percent of referred patients within nine
-        minutes of the referral and moved nearly three quarters of them to a next step
-        (<a href="https://www.zocdoc.com/resources/blog/article/patient-referral-management/" rel="nofollow noopener" target="_blank">Zocdoc, 2026</a>).
-        The constraint has never been whether calling works. It is that a coordinator's day holds a
+        arrives rather than three to seven days later, is the format that actually converts. The
+        constraint has never been whether calling works. It is that a coordinator's day holds a
         finite number of calls, and each referral costs 20 to 30 minutes of staff time by most vendor
         estimates. Samantha removes that constraint: the list gets worked the same afternoon, and
         staff only touch the calls that need a human.
       </p>
 
-      <h2>Consent and calling rules</h2>
+      <h2>Consent</h2>
       <p>
-        Automated and AI-voice calls to mobile phones fall under the Telephone Consumer Protection
-        Act, and the FCC ruled in 2024 that an AI-generated voice counts as an artificial voice for
-        that purpose. Under the FCC's 2015 healthcare rules, a patient who gives a phone number to a
-        HIPAA-covered provider has generally consented to healthcare calls from that provider and its
-        business associates. Whether a number given to the referring physician extends to the
-        receiving practice's first scheduling call is not settled law. Samantha is built to be
-        consent-aware, not to claim an exemption: calls are placed only from a list your staff enter
-        and start, during hours your staff choose, with a daily cap, and the practice confirms it has
-        the patient's consent to be contacted. Ask your counsel how your referral intake should
-        document that consent; we will show you exactly what Samantha says on the call.
+        Samantha calls only the patients your staff enter and only when your staff start the batch,
+        within a fixed daytime dialing window. She says the same thing on every call, and we will
+        show you exactly what that is before you go live.
       </p>
-
-      <h2>Honest limits</h2>
-      <ul>
-        <li>Referrals are entered by staff in Samantha Hub. There is no fax parsing or automatic import from your EMR yet.</li>
-        <li>Calls run one at a time, and a patient who did not answer is not redialed automatically. Staff re-queue them, which keeps a person in control of how often a patient is called.</li>
-        <li>Samantha books with the provider named on the referral. Referrals that need a clinical decision about which provider to see stay with your staff.</li>
-      </ul>
 
       <p>
         Referral outreach is one of the outbound jobs Samantha handles alongside reminders and follow-ups.
