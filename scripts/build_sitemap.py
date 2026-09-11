@@ -29,6 +29,8 @@ def pages():
         rel = f.relative_to(ROOT)
         if rel.parts[0] in ("scripts", "docs", "node_modules", ".git") or rel.name in SKIP:
             continue
+        if 'name="robots" content="noindex' in f.read_text():
+            continue  # unpublished page: reachable by URL, not listed
         url = "/" if rel.parent == pathlib.Path(".") else f"/{rel.parent.as_posix()}/"
         yield url, f
 
