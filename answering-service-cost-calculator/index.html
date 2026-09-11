@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medical Answering Service Cost Calculator | Samantha</title>
-  <meta name="description" content="Estimate what a human medical answering service costs your practice per month and year, and what an automated after-hours receptionist would save." />
+  <meta name="description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
   <link rel="canonical" href="https://www.samantha-medical.com/answering-service-cost-calculator/" />
   <meta name="theme-color" content="#faf7f2" />
   <meta property="og:type" content="website" />
@@ -12,14 +12,14 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://www.samantha-medical.com/answering-service-cost-calculator/" />
   <meta property="og:title" content="Medical Answering Service Cost Calculator | Samantha" />
-  <meta property="og:description" content="Estimate what your practice pays a human medical answering service each month and year, and what an automated receptionist would save." />
+  <meta property="og:description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
   <meta property="og:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Samantha, the after-hours AI receptionist for medical practices" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Medical Answering Service Cost Calculator | Samantha" />
-  <meta name="twitter:description" content="Estimate what your practice pays a human medical answering service each month and year, and what an automated receptionist would save." />
+  <meta name="twitter:description" content="Pick your practice size and see what a traditional medical answering service costs per month and per year, based on published 2026 rates." />
   <meta name="twitter:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,7 @@
         "@id": "https://www.samantha-medical.com/answering-service-cost-calculator/#app",
         "name": "Medical Answering Service Cost Calculator",
         "url": "https://www.samantha-medical.com/answering-service-cost-calculator/",
-        "description": "Free calculator that estimates the monthly and annual cost of a traditional human medical answering service from base fee, included minutes, call volume, and per-minute overage, and compares it to an automated receptionist.",
+        "description": "Free calculator that estimates the monthly and annual cost of a traditional human medical answering service by practice size, using published 2026 rates.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any (web browser)",
         "browserRequirements": "Requires JavaScript",
@@ -78,171 +78,56 @@
       <p class="kicker">Free calculator</p>
       <h1>What does a medical answering service really cost?</h1>
       <p class="lede">
-        Most services bill a base fee, a bucket of included minutes, and a per-minute
-        overage once you pass it. Enter your practice's numbers, or start from the
-        industry defaults below, and see the monthly and annual total next to an
-        automated receptionist.
+        Pick your practice size. We estimate what a traditional human answering service
+        costs per month and per year, using published 2026 rates and the assumptions listed below.
       </p>
     </div>
   </header>
 
   <section style="padding-top:0">
-    <div class="container">
-      <form class="calc" id="calc" novalidate>
-        <div class="calc-panel">
-          <h2>Your practice</h2>
-
-          <div class="field">
-            <label for="calls">After-hours and overflow calls per month</label>
-            <div class="preset-row" role="group" aria-label="Practice size presets">
-              <button type="button" class="preset" data-calls="100">1 to 3 providers &middot; ~100</button>
-              <button type="button" class="preset" data-calls="300">4 to 10 providers &middot; ~300</button>
-              <button type="button" class="preset" data-calls="600">10+ or multi-site &middot; ~600</button>
-            </div>
-            <div class="input-wrap"><input id="calls" type="number" inputmode="numeric" min="0" step="1" value="100" /><span class="affix">calls / month</span></div>
-            <span class="hint">Count only the calls that reach the service: after hours, weekends, and daytime overflow.</span>
-          </div>
-
-          <div class="field">
-            <label for="minutes">Average call length</label>
-            <div class="input-wrap"><input id="minutes" type="number" inputmode="decimal" min="0" step="0.1" value="2.5" /><span class="affix">minutes</span></div>
-            <span class="hint">Message-taking runs about 2 minutes. Calls with scheduling run 3 to 4.</span>
-          </div>
-
-          <h3>Human answering service</h3>
-
-          <div class="model-toggle" role="radiogroup" aria-label="Pricing model">
-            <input type="radio" name="model" id="model-minute" value="minute" checked />
-            <label for="model-minute">Per minute</label>
-            <input type="radio" name="model" id="model-call" value="call" />
-            <label for="model-call">Per call</label>
-          </div>
-
-          <div id="minute-fields">
-            <div class="field-row">
-              <div class="field">
-                <label for="base">Monthly base fee</label>
-                <div class="input-wrap"><span class="affix">$</span><input id="base" type="number" inputmode="decimal" min="0" step="1" value="330" /></div>
-              </div>
-              <div class="field">
-                <label for="included">Included minutes</label>
-                <div class="input-wrap"><input id="included" type="number" inputmode="numeric" min="0" step="1" value="250" /><span class="affix">min</span></div>
-              </div>
-            </div>
-            <div class="field">
-              <label for="overage">Overage rate</label>
-              <div class="input-wrap"><span class="affix">$</span><input id="overage" type="number" inputmode="decimal" min="0" step="0.01" value="1.50" /><span class="affix">per minute</span></div>
-              <span class="hint">Published rates run from about $1.20 to $2.99 per minute after the bucket is used.</span>
-            </div>
-          </div>
-
-          <div id="call-fields" hidden>
-            <div class="field-row">
-              <div class="field">
-                <label for="base-call">Monthly base fee</label>
-                <div class="input-wrap"><span class="affix">$</span><input id="base-call" type="number" inputmode="decimal" min="0" step="1" value="50" /></div>
-              </div>
-              <div class="field">
-                <label for="per-call">Rate per call</label>
-                <div class="input-wrap"><span class="affix">$</span><input id="per-call" type="number" inputmode="decimal" min="0" step="0.01" value="2.00" /></div>
-              </div>
-            </div>
-            <span class="hint">Medical per-call plans run roughly $0.65 to $2 per call. Premium virtual receptionists charge $8 to $12.</span>
-          </div>
-
-          <div class="field-row" style="margin-top:0.9rem">
-            <div class="field">
-              <label for="setup">One-time setup fee</label>
-              <div class="input-wrap"><span class="affix">$</span><input id="setup" type="number" inputmode="decimal" min="0" step="1" value="50" /></div>
-            </div>
-            <div class="field">
-              <label for="cycles">Billing cycles per year</label>
-              <div class="input-wrap"><input id="cycles" type="number" inputmode="numeric" min="1" max="13" step="1" value="12" /></div>
-              <span class="hint">Some services bill every 28 days, which is 13 invoices a year.</span>
-            </div>
-          </div>
-
-          <h3>Automated receptionist</h3>
-          <div class="field">
-            <label for="auto">Flat monthly fee</label>
-            <div class="input-wrap"><span class="affix">$</span><input id="auto" type="number" inputmode="decimal" min="0" step="1" value="299" /><span class="affix">per month</span></div>
-            <span class="hint">Illustrative figure for a flat-rate AI receptionist plan. It is not Samantha's price. <a href="/#contact">Ask us for a quote</a> and enter it here.</span>
-          </div>
+    <div class="container narrow">
+      <div class="calc-panel">
+        <h2>Your practice</h2>
+        <div class="preset-row" role="radiogroup" aria-label="Practice size">
+          <button type="button" class="preset" data-calls="100" aria-pressed="true">1 to 3 providers</button>
+          <button type="button" class="preset" data-calls="300" aria-pressed="false">4 to 10 providers</button>
+          <button type="button" class="preset" data-calls="600" aria-pressed="false">10+ or multi-site</button>
         </div>
+        <p class="hint" style="color:var(--ink-faint);font-size:0.85rem">About <strong id="r-calls">100</strong> after-hours and overflow calls a month, <strong id="r-minutes">250</strong> operator minutes.</p>
 
-        <div class="calc-panel results" aria-live="polite">
-          <h2>Your estimate</h2>
-          <div class="result-big">
-            <div class="label">Estimated annual savings</div>
-            <div class="value" id="save-year">$0</div>
-            <div class="sub"><span id="save-month">$0</span> per month, <span id="save-pct">0%</span> less than the human service</div>
-          </div>
-          <table class="result-table">
-            <tbody>
-              <tr><th>Minutes handled per month</th><td id="r-minutes">0</td></tr>
-              <tr><th>Minutes over the included bucket<span class="muted" id="r-overage-note"></span></th><td id="r-over">0</td></tr>
-              <tr><th>Human service, per month<span class="muted" id="r-human-breakdown"></span></th><td id="r-human-month">$0</td></tr>
-              <tr><th>Human service, first year<span class="muted">includes setup fee and billing cycles</span></th><td id="r-human-year">$0</td></tr>
-              <tr><th>Human service, cost per call</th><td id="r-human-call">$0</td></tr>
-              <tr><th>Automated receptionist, per year</th><td id="r-auto-year">$0</td></tr>
-              <tr><th>Automated receptionist, cost per call</th><td id="r-auto-call">$0</td></tr>
-              <tr class="total"><th>Difference over three years</th><td id="r-three">$0</td></tr>
-            </tbody>
-          </table>
-          <div class="calc-cta">
-            <a class="btn btn-primary" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a 15-minute call</a>
-            <p class="demo-note">Or <a href="tel:+13607262645">call the demo line</a> and hear Samantha handle an after-hours call yourself.</p>
-          </div>
+        <div class="result-big" style="margin-top:1.3rem" aria-live="polite">
+          <div class="label">Estimated cost of a human answering service</div>
+          <div class="value" id="r-month">$330 / month</div>
+          <div class="sub"><span id="r-year">$3,960</span> a year, about <span id="r-call">$3.30</span> per call</div>
         </div>
-      </form>
+        <p id="r-note" class="hint" style="color:var(--ink-soft);font-size:0.9rem"></p>
 
-      <div class="assumptions narrow" style="margin-left:auto;margin-right:auto">
-        <h2>How the estimate works</h2>
-        <p>
-          Minutes handled equals calls per month times average call length. On a per-minute plan,
-          the monthly cost is the base fee plus any minutes beyond the included bucket at the overage
-          rate. On a per-call plan it is the base fee plus calls times the per-call rate. The first-year
-          figure multiplies the monthly cost by the number of billing cycles and adds the one-time setup
-          fee. Savings compare the human service to the flat automated fee over the same period. Taxes,
-          HIPAA surcharges, holiday rates, and minimum-billing rounding are not modeled, and in practice
-          they push the human figure higher, not lower.
-        </p>
-
-        <h2>Where the defaults come from</h2>
-        <p>
-          Defaults are taken from prices published by national answering services in 2026. Every
-          number above is editable, and quotes vary by call complexity, so treat the defaults as a
-          starting point rather than a promise.
-        </p>
-        <div class="table-scroll">
-          <table class="src-table">
-            <thead><tr><th>Service</th><th>Entry plan</th><th>Mid plan</th><th>Overage</th></tr></thead>
-            <tbody>
-              <tr><td><a href="https://www.ambscallcenter.com/pricing" rel="nofollow noopener" target="_blank">Ambs</a> (medical focus)</td><td>$149 for 100 min</td><td>$330 for 250 min</td><td>$1.20 to $1.29 per min</td></tr>
-              <tr><td><a href="https://www.mapcommunications.com/pricing/" rel="nofollow noopener" target="_blank">MAP Communications</a></td><td>$49, no minutes</td><td>$339 for 250 min</td><td>$1.28 to $1.37 per min</td></tr>
-              <tr><td><a href="https://www.patlive.com/pricing/" rel="nofollow noopener" target="_blank">PATLive</a></td><td>$49, no minutes</td><td>$349 for 200 min</td><td>$1.79 to $2.99 per min</td></tr>
-              <tr><td><a href="https://www.ruby.com/pricing/" rel="nofollow noopener" target="_blank">Ruby</a></td><td>$250 for 50 min</td><td>$395 for 100 min</td><td>not published</td></tr>
-              <tr><td><a href="https://smith.ai/pricing" rel="nofollow noopener" target="_blank">Smith.ai</a> (per call)</td><td>$300 for 30 calls</td><td>$810 for 90 calls</td><td>$8.50 to $11.50 per call</td></tr>
-            </tbody>
-          </table>
+        <div class="calc-cta">
+          <a class="btn btn-primary" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Get a Samantha quote</a>
+          <p class="demo-note">Samantha is a flat monthly fee with no per-minute overage. Pricing is quoted per practice on a 15-minute call.</p>
         </div>
+      </div>
+
+      <div class="assumptions">
+        <h2>Our assumptions</h2>
         <ul>
-          <li><strong>Base fee $330 with 250 included minutes</strong> is the midpoint of the 250-minute tier at Ambs, MAP, and PATLive.</li>
-          <li><strong>$1.50 per minute overage</strong> sits between the low band ($1.20 to $1.37) and the high band ($1.85 to $2.99).</li>
-          <li><strong>2.5 minutes per call</strong> splits the 2-minute message-taking figure vendors quote and the 3-minute worked examples in <a href="https://www.continentalmessage.com/blog/medical-answering-service-pricing/" rel="nofollow noopener" target="_blank">Continental Message Solution's pricing guide</a>.</li>
-          <li><strong>Volume presets</strong> follow <a href="https://helpware.com/blog/medical-answering-service-pricing" rel="nofollow noopener" target="_blank">Helpware's 2026 cost guide</a>, which puts a 5 to 10 provider practice at 200 to 500 answered calls a month, and vendor guidance that a solo clinic sends a few dozen to about 100 calls a month to its service.</li>
-          <li><strong>13 billing cycles</strong> is offered because several services bill on a 28-day cycle, a detail Continental Message Solution documents and that quotes rarely mention.</li>
+          <li><strong>$330 a month buys 250 operator minutes.</strong> That is the mid-tier plan at <a href="https://www.ambscallcenter.com/pricing" rel="nofollow noopener" target="_blank">Ambs</a> ($330 for 250), <a href="https://www.mapcommunications.com/pricing/" rel="nofollow noopener" target="_blank">MAP Communications</a> ($339 for 250), and <a href="https://www.patlive.com/pricing/" rel="nofollow noopener" target="_blank">PATLive</a> ($349 for 200).</li>
+          <li><strong>Every minute past 250 costs $1.50.</strong> Published overage rates run from $1.20 (Ambs) to $2.99 (PATLive). We use the middle.</li>
+          <li><strong>A call takes 2.5 minutes of operator time.</strong> Vendors quote 2 minutes for message-taking and 3 for calls with scheduling.</li>
+          <li><strong>Practice size sets call volume.</strong> A 1 to 3 provider practice sends its service about 100 calls a month, 4 to 10 providers about 300, larger or multi-site groups about 600, following <a href="https://helpware.com/blog/medical-answering-service-pricing" rel="nofollow noopener" target="_blank">Helpware's 2026 cost guide</a>.</li>
+          <li><strong>Not included:</strong> setup fees ($50 to $85 at some services), HIPAA surcharges, holiday rates, and the 28-day billing cycles some services use, which add a thirteenth invoice each year. All of these push the real number higher.</li>
         </ul>
+        <p>Prices were collected from public pricing pages in September 2026 and may have changed. This is a planning estimate, not a quote from any vendor.</p>
 
         <h2>Why the calls matter more than the fee</h2>
         <p>
           A 2025 analysis of 7,000 calls across 22 practices found that 42 percent of after-hours calls
           went unanswered (<a href="https://notifymd.com/blog/missed-after-hours-calls/" rel="nofollow noopener" target="_blank">notifyMD</a>),
-          and roughly four in ten patient calls arrive outside of 8 to 5. Each of those calls is a
-          booking, a refill, or a patient deciding whether to stay. The cheapest service is the one
-          that actually answers, verifies the patient, and books the visit. Samantha does that on every
-          call, under a Business Associate Agreement, and files the record for your front desk by morning.
-          <a href="/#care">See what she does</a>.
+          and roughly four in ten patient calls arrive outside of 8 to 5. Each of those is a booking,
+          a refill, or a patient deciding whether to stay. The cheapest service is the one that actually
+          answers, verifies the patient, and books the visit. Samantha does that on every call, under a
+          Business Associate Agreement, and files the record for your front desk by morning.
+          <a href="/#care">See what she does</a>, or read <a href="/ai-receptionist-vs-medical-answering-service/">how an AI receptionist compares to an answering service</a>.
         </p>
       </div>
     </div>
