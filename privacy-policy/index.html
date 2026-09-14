@@ -26,6 +26,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23d63d5b'/%3E%3C/svg%3E" />
+  <!-- Google Analytics 4 (marketing site only - never on app.samantha-medical.com) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVZWT4VLG3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GVZWT4VLG3');
+    // Demo-line clicks: GA4 outbound-click tracking ignores tel: links, so report them explicitly.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (a) gtag('event', 'demo_call_click', { phone: a.getAttribute('href').slice(4) });
+    });
+  </script>
 </head>
 <body>
 
@@ -45,7 +58,7 @@
   <main class="policy">
     <div class="container narrow">
       <h1>Privacy Policy</h1>
-      <p class="updated">Effective date: July 1, 2026</p>
+      <p class="updated">Effective date: September 14, 2026</p>
 
       <h2>1. Who we are</h2>
       <p>
@@ -73,8 +86,15 @@
         <li><strong>SMS program information.</strong> For practice staff who opt in to SMS notifications: the mobile phone number provided and the opt-in consent record. For patients who text a practice's Samantha number: the mobile phone number and the message content of that conversation.</li>
       </ul>
       <p>
-        We do not collect information for advertising. We do not use cookies for tracking
-        or analytics on this website, and we do not build marketing profiles of callers.
+        We do not collect information for advertising, and we do not build marketing profiles of callers.
+      </p>
+      <p>
+        <strong>Website analytics.</strong> This public website (www.samantha-medical.com) uses
+        Google Analytics to understand how visitors find and use the site, such as pages viewed
+        and links clicked. Google Analytics sets cookies and processes visitor data under
+        <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.
+        Analytics is used on this marketing website only. It is never used in the receptionist
+        service, the staff application, or any system that handles patient or health information.
       </p>
 
       <h2>3. How we use information</h2>

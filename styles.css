@@ -162,7 +162,7 @@ a:hover { color: var(--rose-700); }
 .btn-ghost:hover { border-color: var(--rose-500); color: var(--rose-600); }
 
 /* ---------- sections ---------- */
-section { padding: 4.5rem 0; }
+section { padding: 4.5rem 0; scroll-margin-top: 3.5rem; } /* clear the sticky nav on anchor jumps */
 .kicker {
   text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.78rem;
   font-weight: 700; color: var(--rose-600); margin-bottom: 0.7rem;
@@ -189,6 +189,30 @@ section { padding: 4.5rem 0; }
 }
 .card h3 { font-size: 1.12rem; margin-bottom: 0.45rem; }
 .card p { color: var(--ink-soft); font-size: 0.94rem; }
+
+/* ---------- how it works ---------- */
+.steps {
+  list-style: none; counter-reset: none;
+  display: grid; gap: 1.25rem; margin-top: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.step {
+  position: relative;
+  background: #fff; border: 1px solid var(--sand-200);
+  border-radius: var(--radius); padding: 1.7rem 1.5rem 1.5rem;
+  box-shadow: 0 1px 2px rgba(44, 37, 33, 0.04);
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose-500), var(--rose-700));
+  color: #fff; font-family: "Fraunces", Georgia, serif;
+  font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;
+}
+.step h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+.step p { color: var(--ink-soft); font-size: 0.92rem; }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
 /* ---------- voice (dark, "Her" evening) ---------- */
 .voice {

@@ -55,6 +55,19 @@
     ]
   }
   </script>
+  <!-- Google Analytics 4 (marketing site only - never on app.samantha-medical.com) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVZWT4VLG3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GVZWT4VLG3');
+    // Demo-line clicks: GA4 outbound-click tracking ignores tel: links, so report them explicitly.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (a) gtag('event', 'demo_call_click', { phone: a.getAttribute('href').slice(4) });
+    });
+  </script>
 </head>
 <body>
 

@@ -125,6 +125,19 @@
   ]
 }
   </script>
+  <!-- Google Analytics 4 (marketing site only - never on app.samantha-medical.com) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVZWT4VLG3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GVZWT4VLG3');
+    // Demo-line clicks: GA4 outbound-click tracking ignores tel: links, so report them explicitly.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (a) gtag('event', 'demo_call_click', { phone: a.getAttribute('href').slice(4) });
+    });
+  </script>
 </head>
 <body>
 
@@ -134,6 +147,7 @@
       <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
       <label for="nav-toggle" class="nav-toggle-btn" aria-label="Open menu">&#9776;</label>
       <div class="nav-links">
+        <a href="#how">How it works</a>
         <a href="#care">What she does</a>
         <a href="#demo">Try her</a>
         <a href="#voice">Her voice</a>
@@ -166,6 +180,39 @@
       </div>
     </div>
   </header>
+
+  <section id="how">
+    <div class="container">
+      <p class="kicker">How it works</p>
+      <h2 class="section-title">Four steps, every call.</h2>
+      <p class="section-sub">
+        No scripts to write and no new software for your staff to learn. Samantha
+        plugs into the calendar or EMR you already use and handles the call end to end.
+      </p>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>A patient calls</h3>
+          <p>After hours, on a busy line, or on a callback list. Samantha answers on the first ring, every time.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>She verifies and listens</h3>
+          <p>Returning patients are recognized by caller ID and confirmed by name and date of birth. New callers are registered on the spot.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>She acts on your real systems</h3>
+          <p>Books, changes, or cancels against live availability, takes a message for staff, or tells an emergency caller to hang up and dial 911.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">4</span>
+          <h3>Your staff gets the record</h3>
+          <p>Every call is logged in Samantha Hub, and a briefing of the night's calls is waiting when the office opens.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 
   <section id="care">
     <div class="container">
