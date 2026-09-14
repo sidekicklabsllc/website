@@ -365,6 +365,11 @@ footer {
 .result-big .result-note { font-size: 0.85rem; opacity: 0.85; margin-top: 0.8rem; line-height: 1.45; }
 .result-alt { background: linear-gradient(135deg, var(--night-2), var(--night)); }
 .compare-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.3rem; }
+.policy .kicker { color: var(--rose-600); font-size: 0.78rem; margin-bottom: 0.7rem; }
+.consult-grid { margin: 2rem 0 2.5rem; }
+.consult-grid .card h3 { font-size: 1.15rem; }
+.consult-grid .card ul { margin: 0.9rem 0 0 1.1rem; }
+.consult-grid .card li { font-size: 0.92rem; margin-bottom: 0.4rem; }
 @media (max-width: 640px) { .compare-grid { grid-template-columns: 1fr; } }
 .calc-cta { text-align: center; margin-top: 1.5rem; }
 .assumptions { margin-top: 3.5rem; }
