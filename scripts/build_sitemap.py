@@ -11,7 +11,7 @@ BASE = "https://www.samantha-medical.com"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RULES = {  # path prefix -> (changefreq, priority); first match wins
     "/": ("monthly", "1.0"),
-    "/answering-service-cost-calculator/": ("monthly", "0.8"),
+    "/cost-savings/": ("monthly", "0.8"),
     "/privacy-policy/": ("yearly", "0.3"),
     "/terms-and-conditions/": ("yearly", "0.3"),
     "/sms/": ("yearly", "0.3"),

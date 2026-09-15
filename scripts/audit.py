@@ -4,6 +4,9 @@
 Checks: exactly one <h1>; <title> present and <= 60 chars; meta description present and <= 155;
 canonical present and self-referencing; viewport meta present; every <img> has alt; no internal
 link or asset points at a missing file; no link uses index.html or a relative path; JSON-LD parses.
+
+Redirect stubs (a page whose only job is <meta http-equiv="refresh">) are exempt from the content
+checks; instead their redirect target must resolve to a real file.
 Run from the repo root:  python3 scripts/audit.py
 """
 import json, pathlib, re, sys
@@ -17,12 +20,16 @@ class P(HTMLParser):
     def __init__(self):
         super().__init__(); self.h1 = 0; self.title = None; self.desc = None; self.canon = None
         self.viewport = False; self.imgs_no_alt = 0; self.links = []; self.jsonld = []; self._t = None; self._in_title = False; self._ld = False
+        self.redirect = None
     def handle_starttag(self, t, a):
         a = dict(a)
         if t == "h1": self.h1 += 1
         if t == "title": self._in_title = True; self.title = ""
         if t == "meta" and a.get("name") == "description": self.desc = a.get("content", "")
         if t == "meta" and a.get("name") == "viewport": self.viewport = True
+        if t == "meta" and (a.get("http-equiv") or "").lower() == "refresh":
+            m = re.search(r"url=(\S+)", a.get("content", ""), re.I)
+            self.redirect = m.group(1) if m else ""
         if t == "link" and a.get("rel") == "canonical": self.canon = a.get("href")
         if t == "img" and not a.get("alt", "").strip() and a.get("alt") is None: self.imgs_no_alt += 1
         if t == "script" and a.get("type") == "application/ld+json": self._ld = True; self.jsonld.append("")
@@ -44,6 +51,12 @@ def main():
     for f in sorted(files):
         rel = f.relative_to(ROOT); p = P(); p.feed(f.read_text()); tag = str(rel)
         def bad(msg): fails.append(f"{tag}: {msg}")
+        if p.redirect is not None:
+            target = ROOT / p.redirect.lstrip("/")
+            if p.redirect.endswith("/"): target = target / "index.html"
+            if not p.redirect.startswith("/"): bad(f"redirect target is not absolute: {p.redirect}")
+            elif not target.is_file(): bad(f"redirect target does not exist: {p.redirect}")
+            continue
         if p.h1 != 1: bad(f"{p.h1} <h1> tags")
         if not p.title: bad("missing <title>")
         elif len(p.title) > 60: bad(f"title is {len(p.title)} chars (>60)")

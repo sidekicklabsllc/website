@@ -16,8 +16,8 @@ Fonts: Fraunces (headings) + Inter (body) via Google Fonts; everything else is p
 ## Preview locally
 
 ```bash
-python3 -m http.server 8000 --directory website
-# then open http://localhost:8000
+python3 -m http.server 8765            # from the repo root
+# then open http://127.0.0.1:8765
 ```
 
 ## Deploy

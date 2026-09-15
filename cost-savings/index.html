@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Practice Cost Savings and ROI | Samantha</title>
+  <meta name="description" content="Estimate what unanswered calls and stale referrals cost your practice, using only figures we could trace to a primary source. Every assumption is listed." />
+  <link rel="canonical" href="https://www.samantha-medical.com/cost-savings/" />
+  <meta name="theme-color" content="#faf7f2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Samantha" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://www.samantha-medical.com/cost-savings/" />
+  <meta property="og:title" content="Medical Practice Cost Savings and ROI | Samantha" />
+  <meta property="og:description" content="Estimate what unanswered calls and stale referrals cost your practice, using only figures we could trace to a primary source. Every assumption is listed." />
+  <meta property="og:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Samantha, the after-hours AI receptionist for medical practices" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Medical Practice Cost Savings and ROI | Samantha" />
+  <meta name="twitter:description" content="Estimate what unanswered calls and stale referrals cost your practice, using only figures we could trace to a primary source. Every assumption is listed." />
+  <meta name="twitter:image" content="https://www.samantha-medical.com/images/og-samantha.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.samantha-medical.com/cost-savings/#app",
+        "name": "Medical Practice Savings Estimator",
+        "url": "https://www.samantha-medical.com/cost-savings/",
+        "description": "Free estimator for the revenue a medical practice loses to unanswered calls and stale referrals, built only from figures traceable to a primary source.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://www.samantha-medical.com/#organization" },
+        "isPartOf": { "@id": "https://www.samantha-medical.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Samantha", "item": "https://www.samantha-medical.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Cost Savings", "item": "https://www.samantha-medical.com/cost-savings/" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics 4 (marketing site only - never on app.samantha-medical.com) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVZWT4VLG3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GVZWT4VLG3');
+    // Demo-line clicks: GA4 outbound-click tracking ignores tel: links, so report them explicitly.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+      if (a) gtag('event', 'demo_call_click', { phone: a.getAttribute('href').slice(4) });
+    });
+  </script>
+  <!-- Microsoft Clarity (marketing site only - never on app.samantha-medical.com) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yia54zu3ib");
+  </script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="wordmark"><span class="dot"></span>samantha</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Open menu">&#9776;</label>
+      <div class="nav-links">
+        <a href="/#care">What she does</a>
+        <a href="/#demo">Try her</a>
+        <a href="/#trust">Safety &amp; trust</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/#contact">Talk to us</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="calc-hero">
+    <div class="container">
+      <p class="kicker">Savings estimator</p>
+      <h1>What the calls you miss are actually worth</h1>
+      <p class="lede">
+        A phone that rings out is a booking that does not happen. A referral that sits for a week is
+        a patient who goes somewhere else. Put your own numbers in and see the size of it, with
+        every assumption written down and sourced.
+      </p>
+    </div>
+  </header>
+
+  <section style="padding-top:0">
+    <div class="container narrow">
+
+      <div class="calc-panel">
+        <h2>Your practice</h2>
+
+        <div class="preset-row" role="group" aria-label="Practice size">
+          <button type="button" class="preset" data-calls="600" aria-pressed="false">1 to 3 providers</button>
+          <button type="button" class="preset" data-calls="1500" aria-pressed="true">4 to 10 providers</button>
+          <button type="button" class="preset" data-calls="3000" aria-pressed="false">10+ providers</button>
+          <button type="button" class="preset" data-calls="6000" aria-pressed="false">Multi-site</button>
+        </div>
+
+        <div class="field">
+          <label for="in-calls">Inbound calls a month</label>
+          <input type="number" id="in-calls" value="1500" min="0" step="50" inputmode="numeric" />
+        </div>
+        <p class="field-note">All inbound calls to the practice line, not just after hours.</p>
+
+        <div class="field">
+          <label for="in-rev">Average revenue per visit</label>
+          <input type="number" id="in-rev" value="150" min="0" step="10" inputmode="numeric" />
+        </div>
+        <p class="field-note">
+          Medicare pays $95.19 for a level 3 established visit and $177.36 for a level 4 new patient in 2026.
+          Commercial payers run higher. Use your own blended number if you have it.
+        </p>
+
+        <div class="field">
+          <label for="in-refs">Referrals received a month</label>
+          <input type="number" id="in-refs" value="40" min="0" step="5" inputmode="numeric" />
+        </div>
+        <p class="field-note">Leave at zero if your practice does not take referrals.</p>
+
+        <h2 style="margin-top:1.8rem">How conservative do you want to be?</h2>
+        <div class="preset-row" role="group" aria-label="Assumption set" style="margin-bottom:1.6rem">
+          <button type="button" class="preset" data-set="conservative" aria-pressed="true">Conservative</button>
+          <button type="button" class="preset" data-set="midpoint" aria-pressed="false">Midpoint</button>
+        </div>
+        <div aria-live="polite">
+          <div class="result-big">
+            <div class="label">Revenue you are not capturing</div>
+            <div class="value" id="r-total">$52,445</div>
+            <div class="sub" id="r-total-sub"></div>
+            <p class="result-note">
+              This is contribution, not gross billing: the slot was going to sit empty either way, so
+              almost none of the cost of filling it is new.
+            </p>
+          </div>
+
+          <div class="result-split">
+            <div class="result-sm">
+              <div class="label">Calls that never reach a person</div>
+              <div class="value" id="r-calls-val"></div>
+              <div class="sub" id="r-calls-sub"></div>
+            </div>
+            <div class="result-sm">
+              <div class="label">Referrals worked the same day</div>
+              <div class="value" id="r-refs-val"></div>
+              <div class="sub" id="r-refs-sub"></div>
+            </div>
+          </div>
+
+          <p class="chain" id="r-chain"></p>
+        </div>
+
+        <div class="calc-cta">
+          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a 15-minute call</a>
+          <p class="demo-note">
+            Samantha is priced per provider per month. Or email <a href="mailto:info@samantha-medical.com?subject=Samantha%20quote%20request">info@samantha-medical.com</a> with the numbers
+            above, and we will work out the payback against a real quote instead of a made-up one.
+          </p>
+        </div>
+      </div>
+
+      <div class="assumptions">
+        <h2>How each number is built</h2>
+        <p>
+          Every multiplier the estimator uses, where it came from, and how much weight it deserves.
+          <span class="tag tag-strong">solid</span> means peer-reviewed, government, or a named dataset
+          with a stated method. <span class="tag tag-med">fair</span> means a vendor's own platform data
+          with a real sample size. <span class="tag tag-weak">ours</span> means we made it up and are
+          telling you so. The three <span class="tag tag-weak">ours</span> rows are deliberately held at the
+          same value in both sets, so the toggle only ever moves figures that have a source.
+        </p>
+
+        <div class="table-scroll">
+          <table class="src-table">
+            <thead>
+              <tr><th>Assumption</th><th>Conservative</th><th>Midpoint</th><th>Where it comes from</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Calls that never reach a person</td><td>20%</td><td>30%</td>
+                <td><span class="tag tag-med">fair</span>
+                  31% of 11,552,668 patient calls across 8,280 locations disconnected before reaching an agent
+                  (Patient Prism, 2025);
+                  Invoca reports about 29% from its own platform. The only peer-reviewed anchor is narrower:
+                  in-queue abandonment across 285 VA facilities fell from 12.0% to 8.3%
+                  (<a href="https://www.ajmc.com/view/call-center-performance-affects-patient-perceptions-of-access-and-satisfaction" rel="nofollow noopener" target="_blank">AJMC, 2020</a>),
+                  which excludes busy signals and after-hours rollover. We start below all of them.</td>
+              </tr>
+              <tr>
+                <td>Of those, real booking opportunities</td><td>34%</td><td>34%</td>
+                <td><span class="tag tag-med">fair</span>
+                  Of every 100 calls in the Patient Prism dataset, 34 were booking opportunities and 21 became
+                  appointments. We assume unanswered calls contain the same share as answered ones.</td>
+              </tr>
+              <tr>
+                <td>Callers who never try again</td><td>25%</td><td>40%</td>
+                <td><span class="tag tag-med">fair</span>
+                  21% of consumers say they immediately call another business when a call goes unanswered
+                  (CallRail, 2025, n=1,000). We treat that as the floor and allow some room for the caller who
+                  simply drifts away. The better-known figures from the same survey measure something else and
+                  we do not use them: 58% describes people who do not leave a voicemail, which is not the same
+                  as never calling back, and the 78% who have abandoned a business is lifetime behaviour, not
+                  the odds on any one call. General consumers, not patients. There is no healthcare-specific
+                  study of this.</td>
+              </tr>
+              <tr>
+                <td>Share of lost bookings that are new patients</td><td>15%</td><td>15%</td>
+                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong>
+                  No dataset splits missed calls into new and established patients. Change it to whatever your
+                  front desk would say.</td>
+              </tr>
+              <tr>
+                <td>Contribution margin per visit</td><td>55%</td><td>75%</td>
+                <td><span class="tag tag-strong">solid</span>
+                  Overhead runs about 60% of practice revenue
+                  (<a href="https://www.mgma.com/articles/24-strategies-to-grow-revenue-and-control-costs-in-your-medical-practice" rel="nofollow noopener" target="_blank">MGMA</a>),
+                  but for a slot that would otherwise sit empty almost all of it is already spent. The
+                  peer-reviewed VA no-show study counted the full encounter as loss for exactly this reason,
+                  because staff costs stayed constant
+                  (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4714455/" rel="nofollow noopener" target="_blank">BMC Health Services Research, 2016</a>).
+                  A purely marginal view supports 90%. We use 55% and 75%.</td>
+              </tr>
+              <tr>
+                <td>Visits per patient per year</td><td>2.0</td><td>2.0</td>
+                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong> Planning assumption. Specialty and dental run higher.</td>
+              </tr>
+              <tr>
+                <td>Years a new patient stays</td><td>2</td><td>2</td>
+                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong>
+                  There is no current national figure. 30% of consumers picked a new provider in a single year
+                  and 25% switched out of dissatisfaction
+                  (<a href="https://www.healthcaredive.com/news/patients-switching-providers-genz-millenial-accenture/641866/" rel="nofollow noopener" target="_blank">Accenture, 2022, n=10,000</a>),
+                  which implies three to four years, not the seven to ten that lifetime-value pages like to use.
+                  We use two and three.</td>
+              </tr>
+              <tr>
+                <td>Referral completion lift from same-day outreach</td><td>+10 pts</td><td>+20 pts</td>
+                <td><span class="tag tag-strong">solid</span>
+                  Only 34.8% of 103,737 referral scheduling attempts reached a documented completed appointment
+                  (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5910374/" rel="nofollow noopener" target="_blank">Journal of General Internal Medicine, 2018</a>).
+                  Removing friction between the referral and the booking took scheduling from 54% to 83%, a
+                  29-point lift across 40,487 referrals
+                  (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2686771/" rel="nofollow noopener" target="_blank">JGIM, 2009</a>).
+                  Lighter automated outreach in comparable completion problems moves 9 to 14 points. We claim
+                  10 and 20.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Why speed is the whole argument on referrals</h2>
+        <p>
+          The referral you booked and the referral you lost are separated mostly by time. Across 103,737
+          scheduling attempts, completed referrals had a mean wait of <strong>20.1 days</strong> and
+          incomplete ones <strong>41.7 days</strong>. Distance barely mattered: 8.1 miles against 8.6
+          (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5910374/" rel="nofollow noopener" target="_blank">JGIM, 2018</a>).
+          Delay does most of its damage in the first week and then levels off
+          (<a href="https://psychiatryonline.org/doi/10.1176/appi.ps.56.3.344" rel="nofollow noopener" target="_blank">Psychiatric Services, 2005</a>).
+          And the further out the appointment lands, the less likely the patient is to arrive: no-shows
+          run 9.1% when the visit is inside two weeks and 38.3% when it is six months out, across 46,655
+          appointments
+          (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4370946/" rel="nofollow noopener" target="_blank">Clinical Ophthalmology, 2015</a>).
+          Meanwhile the average wait for a new-patient appointment across 15 metros is 31 days, up 48%
+          since 2004
+          (<a href="https://www.amnhealthcare.com/amn-insights/physician/whitepapers/2025-survey-of-physician-appointment-wait-times/" rel="nofollow noopener" target="_blank">AMN Healthcare, 2025</a>).
+        </p>
+        <p>
+          What we cannot show you is a clean curve of referral conversion against days-to-first-contact.
+          Several vendors publish one. None of them cite anything, and no such study exists in the
+          US literature. The honest version is the three findings above: the referrals that convert are
+          the ones contacted and booked quickly.
+          <a href="/ai-referral-outreach-calls/">How Samantha works a referral list</a>.
+        </p>
+
+        <h2>Four more levers, not counted in the total</h2>
+        <p>
+          These are real, but the evidence is thinner or the value depends too much on your setup to put a
+          number on it for you. We would rather leave them out of the headline than pad it.
+        </p>
+
+        <div class="lever">
+          <h3>Filling cancellations <span class="tag tag-strong">solid</span></h3>
+          <p>
+            Only 27% of canceled visits were rebooked within 30 days in 2024, down from about 62%
+            (<a href="https://www.mgma.com/articles/designing-backfill-and-overbooking-by-specialty" rel="nofollow noopener" target="_blank">MGMA, 2026</a>),
+            so this problem got materially worse. The honest number for waitlist backfill is modest:
+            11% of 60,660 automated offers were accepted. But those offers produced 5,399 completed
+            visits, about $3M in professional fees over nine months at one system, and patients were
+            seen a median 14 days sooner
+            (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10988365/" rel="nofollow noopener" target="_blank">JMIR, 2024</a>).
+            It is a volume game. Thousands of cheap offers is exactly what a caller who does not get
+            tired can do and a staffed phone list cannot.
+          </p>
+        </div>
+
+        <div class="lever">
+          <h3>What you already pay to cover the phone <span class="tag tag-strong">solid</span></h3>
+          <p>
+            This one is a straight cost offset and it is the most verifiable figure on the page, because
+            it is a published price rather than a claim. A live US receptionist service charges
+            $7 to $10 per answered call with appointment booking a $1.50 upcharge on top
+            (Smith.ai).
+            A medical answering service runs $1.75 to $2.25 a minute, plus 10% to 30% for HIPAA handling.
+            A front-desk hire costs about $65,600 fully loaded: the BLS median wage for medical secretaries
+            is $45,930
+            (<a href="https://www.bls.gov/ooh/office-and-administrative-support/secretaries-and-administrative-assistants.htm" rel="nofollow noopener" target="_blank">BLS, May 2025</a>)
+            and benefits add 30% of total compensation
+            (<a href="https://www.bls.gov/news.release/ecec.nr0.htm" rel="nofollow noopener" target="_blank">BLS ECEC</a>),
+            and that buys 40 hours a week, none of them at night. A human answering service sits in
+            between at $1.75 to $2.25 a minute, plus a 10% to 30% surcharge for HIPAA handling, and its
+            operator cannot see your calendar, so it takes a message rather than booking the visit.
+          </p>
+        </div>
+
+        <div class="lever">
+          <h3>The marketing you already paid for <span class="tag tag-med">fair</span></h3>
+          <p>
+            Median cost per lead on search is $62.80 for family medicine, $84.77 for general dentistry,
+            and $66.02 across healthcare, from 3,542 campaigns
+            (<a href="https://localiq.com/blog/healthcare-search-advertising-benchmarks/" rel="nofollow noopener" target="_blank">LocaliQ, 2025</a>).
+            A lead is a form fill or a phone call, not a patient. So the practice has already spent the
+            money to make the phone ring before anyone decides whether to pick it up. This is not extra
+            revenue, it is waste you stop.
+          </p>
+        </div>
+
+        <div class="lever">
+          <h3>A record of every after-hours call <span class="tag tag-strong">solid</span></h3>
+          <p>
+            In a review of closed malpractice claims arising from telephone medicine, documentation
+            failure appeared in 88% of cases and average indemnity was $518,932
+            (<a href="https://pubmed.ncbi.nlm.nih.gov/18228110/" rel="nofollow noopener" target="_blank">Journal of General Internal Medicine, 2008</a>).
+            Samantha records, transcribes, and timestamps every call, and files it for the morning. We
+            are making a claim about the record, not about clinical judgement: Samantha never triages,
+            never gives medical advice, and directs every emergency to hang up and dial 911.
+          </p>
+        </div>
+
+        <h2 id="discarded">Read this about online calculators</h2>
+        <div class="callout">
+          <p>
+            We went looking for the numbers behind this category and most of them are not real. The
+            famous <em>"$200 per empty appointment slot"</em> and <em>"$150 billion a year"</em> both
+            trace back to a single 2017 trade-magazine opinion piece written by the chief marketing
+            officer of a scheduling vendor, with no study behind it. <em>"Practices miss 42% of calls"</em>
+            comes from a LinkedIn post. <em>"85% of patients never call back"</em> has no source at all.
+            Nearly every savings page you will read today is built on those four numbers. So this one
+            is not: every figure above is either traceable to a primary source or labelled as our own
+            assumption.
+          </p>
+        </div>
+        <p>
+          Here is what we threw out. Each of these appears on competitors' savings pages. We chased
+          every one to its source and the source is not there. If you see them quoted at you, they
+          came from nowhere.
+        </p>
+        <div class="table-scroll">
+          <table class="src-table strike-table">
+            <thead><tr><th>The claim</th><th>What is actually behind it</th></tr></thead>
+            <tbody>
+              <tr><td>"$200 per empty appointment slot"</td><td>A 2017 opinion column by the chief marketing officer of a scheduling vendor. No study, no method, no footnote.</td></tr>
+              <tr><td>"$150 billion a year in missed appointments"</td><td>The same column. Almost every dollar figure in this category descends from these two sentences.</td></tr>
+              <tr><td>"Practices miss 42% of calls"</td><td>A LinkedIn post. No institution, no methodology, no citation. Widely requoted as a study.</td></tr>
+              <tr><td>"85% of patients never call back"</td><td>Vendor blogs citing vendor blogs. No origin.</td></tr>
+              <tr><td>"67% of patients hang up at voicemail and call a competitor"</td><td>Attributed across a dozen sites to a study that does not appear to exist.</td></tr>
+              <tr><td>"41% to 48% of patient calls come after hours"</td><td>Exists only in uncited vendor copy. The real after-hours case does not need it: a practice open 40 hours is closed for roughly three quarters of the week.</td></tr>
+              <tr><td>"$821,000 to $971,000 lost per physician to referral leakage"</td><td>Traces vendor to vendor and dead-ends at a referral-software company's undated page. What is survey-backed: 43% of health system executives say leakage costs them more than 10% of annual revenue, and 19% say more than 20% (Sage Growth Partners, 2018, n=104).</td></tr>
+              <tr><td>"Reminder calls cut no-shows by 20% to 30%"</td><td>A centralized phone reminder system moved no-shows from 16.3% to 15.2%, which the authors called a modest effect, and mailed reminders did nothing measurable (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4714455/" rel="nofollow noopener" target="_blank">BMC, 2016</a>). Cochrane puts SMS reminders at a relative risk of 1.14. One-way reminders are worth a point or two, not twenty. Two-way confirmation and easy rescheduling are where the movement is.</td></tr>
+              <tr><td>"Recover 70% of your missed calls"</td><td>One competitor's stated assumption, sourced to their own deployment data. Our estimator assumes you recover a fraction of the bookable ones, and shows you the arithmetic.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          We would rather show you a smaller number you can check than a larger one you cannot. If any
+          figure on this page looks wrong to you, tell us and we will fix it or take it down.
+        </p>
+
+        <div class="calc-cta" style="margin-top:2.5rem">
+          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a 15-minute call</a>
+          <p class="demo-note">
+            Or email <a href="mailto:info@samantha-medical.com?subject=Samantha%20quote%20request">info@samantha-medical.com</a>, or <a href="tel:+13607262645">call the demo line at
+            (360) 726-2645</a> and hear Samantha handle an after-hours call yourself.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="col">
+          <a href="/" class="wordmark" style="font-size:1.1rem"><span class="dot" style="width:1.2rem;height:1.2rem"></span>samantha</a>
+          <p style="margin-top:0.8rem;max-width:34ch">The virtual front desk for medical practices, after hours.</p>
+        </div>
+        <div class="col">
+          <h4>Resources</h4>
+          <a href="/cost-savings/">What Samantha is worth</a>
+          <a href="/ai-receptionist-vs-medical-answering-service/">AI receptionist vs answering service</a>
+          <a href="/hipaa-compliant-ai-answering-service/">HIPAA-compliant AI answering service</a>
+          <a href="/after-hours-answering-service-for-medical-offices/">After-hours answering for medical offices</a>
+          <a href="/ai-referral-outreach-calls/">AI referral outreach calls</a>
+          <a href="/consulting/">AI consulting</a>
+          <a href="/faq/">Frequently asked questions</a>
+        </div>
+        <div class="col">
+          <h4>Legal</h4>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-and-conditions/">Terms and Conditions</a>
+          <a href="/sms/">SMS Programs</a>
+        </div>
+        <div class="col">
+          <h4>Contact</h4>
+          <a href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a call</a>
+          <a href="mailto:info@samantha-medical.com">info@samantha-medical.com</a>
+        </div>
+      </div>
+      <p class="fineprint">
+        The estimator is a planning tool, not a forecast, a guarantee, or a quote. It multiplies your
+        inputs by the published assumptions listed above. Sources were checked in September 2026.
+      </p>
+      <p class="fineprint">Samantha is a virtual assistant from Sidekick Labs LLC, not a clinician, and does not provide medical advice.</p>
+      <p class="fineprint">&copy; 2026 Sidekick Labs LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/savings.js"></script>
+
+</body>
+</html>
