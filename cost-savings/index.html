@@ -113,6 +113,19 @@
     <div class="container narrow">
 
       <div class="calc-panel">
+        <div aria-live="polite">
+          <div class="result-big" style="margin-bottom:1.8rem">
+            <div class="label">Revenue you are not capturing</div>
+            <div class="value" id="r-total">$37,803</div>
+            <div class="sub" id="r-total-sub"></div>
+            <p class="result-note">
+              Worked out from the figures below, all of which you can change. This is contribution, not
+              gross billing: the slot was going to sit empty either way, so almost none of the cost of
+              filling it is new.
+            </p>
+          </div>
+        </div>
+
         <h2>Your practice</h2>
 
         <div class="preset-row" role="group" aria-label="Practice size">
@@ -149,16 +162,6 @@
           <button type="button" class="preset" data-set="midpoint" aria-pressed="false">Midpoint</button>
         </div>
         <div aria-live="polite">
-          <div class="result-big">
-            <div class="label">Revenue you are not capturing</div>
-            <div class="value" id="r-total">$52,445</div>
-            <div class="sub" id="r-total-sub"></div>
-            <p class="result-note">
-              This is contribution, not gross billing: the slot was going to sit empty either way, so
-              almost none of the cost of filling it is new.
-            </p>
-          </div>
-
           <div class="result-split">
             <div class="result-sm">
               <div class="label">Calls that never reach a person</div>
@@ -191,8 +194,9 @@
           <span class="tag tag-strong">solid</span> means peer-reviewed, government, or a named dataset
           with a stated method. <span class="tag tag-med">fair</span> means a vendor's own platform data
           with a real sample size. <span class="tag tag-weak">ours</span> means we made it up and are
-          telling you so. The three <span class="tag tag-weak">ours</span> rows are deliberately held at the
-          same value in both sets, so the toggle only ever moves figures that have a source.
+          telling you so. The three <span class="tag tag-weak">ours</span> rows are the same in both sets, so the toggle only
+          ever moves figures that have a source. Those three are yours to dial: type over them and the
+          estimate above updates.
         </p>
 
         <div class="table-scroll">
@@ -204,9 +208,10 @@
               <tr>
                 <td>Calls that never reach a person</td><td>20%</td><td>30%</td>
                 <td><span class="tag tag-med">fair</span>
-                  31% of 11,552,668 patient calls across 8,280 locations disconnected before reaching an agent
-                  (Patient Prism, 2025);
-                  Invoca reports about 29% from its own platform. The only peer-reviewed anchor is narrower:
+                  31% of 11,552,668 patient calls across 8,280 dental and DSO locations disconnected before
+                  reaching an agent (Patient Prism, 2025). That is the largest dataset we found, but it is
+                  dental, so the healthcare-wide corroboration carries the weight here: Invoca reports about
+                  29% of inbound calls missed even at well-run healthcare organizations, from its own platform. The only peer-reviewed anchor is narrower:
                   in-queue abandonment across 285 VA facilities fell from 12.0% to 8.3%
                   (<a href="https://www.ajmc.com/view/call-center-performance-affects-patient-perceptions-of-access-and-satisfaction" rel="nofollow noopener" target="_blank">AJMC, 2020</a>),
                   which excludes busy signals and after-hours rollover. We start below all of them.</td>
@@ -218,21 +223,20 @@
                   appointments. We assume unanswered calls contain the same share as answered ones.</td>
               </tr>
               <tr>
-                <td>Callers who never try again</td><td>25%</td><td>40%</td>
+                <td>Callers who never try again</td><td>15%</td><td>21%</td>
                 <td><span class="tag tag-med">fair</span>
                   21% of consumers say they immediately call another business when a call goes unanswered
-                  (CallRail, 2025, n=1,000). We treat that as the floor and allow some room for the caller who
-                  simply drifts away. The better-known figures from the same survey measure something else and
-                  we do not use them: 58% describes people who do not leave a voicemail, which is not the same
-                  as never calling back, and the 78% who have abandoned a business is lifetime behaviour, not
-                  the odds on any one call. General consumers, not patients. There is no healthcare-specific
-                  study of this.</td>
+                  (CallRail, 2025, n=1,000). Midpoint uses exactly that measured figure and nothing above it;
+                  conservative sits below it. The better-known numbers from the same survey measure something
+                  else and we do not use them: 58% describes people who do not leave a voicemail, which is not
+                  the same as never calling back, and the 78% who have abandoned a business is lifetime
+                  behaviour, not the odds on any one call. General consumers, not patients. There is no
+                  healthcare-specific study of this.</td>
               </tr>
               <tr>
-                <td>Share of lost bookings that are new patients</td><td>15%</td><td>15%</td>
-                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong>
-                  No dataset splits missed calls into new and established patients. Change it to whatever your
-                  front desk would say.</td>
+                <td>Share of lost bookings that are new patients</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-newshare" value="15" min="0" step="1" inputmode="decimal" aria-label="Share of lost bookings that are new patients, percent" />%</td>
+                <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong>
+                  No dataset splits missed calls into new and established patients. Set it to whatever your front desk would say.</td>
               </tr>
               <tr>
                 <td>Contribution margin per visit</td><td>55%</td><td>75%</td>
@@ -246,12 +250,12 @@
                   A purely marginal view supports 90%. We use 55% and 75%.</td>
               </tr>
               <tr>
-                <td>Visits per patient per year</td><td>2.0</td><td>2.0</td>
-                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong> Planning assumption. Specialty and dental run higher.</td>
+                <td>Visits per patient per year</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-visits" value="2.0" min="0" step="0.5" inputmode="decimal" aria-label="Visits per patient per year" /></td>
+                <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong> Planning assumption. Specialty and dental run higher.</td>
               </tr>
               <tr>
-                <td>Years a new patient stays</td><td>2</td><td>2</td>
-                <td><span class="tag tag-weak">ours</span> <strong>Held constant in both sets.</strong>
+                <td>Years a new patient stays</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-years" value="2" min="0" step="1" inputmode="decimal" aria-label="Years a new patient stays" /></td>
+                <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong>
                   There is no current national figure. 30% of consumers picked a new provider in a single year
                   and 25% switched out of dissatisfaction
                   (<a href="https://www.healthcaredive.com/news/patients-switching-providers-genz-millenial-accenture/641866/" rel="nofollow noopener" target="_blank">Accenture, 2022, n=10,000</a>),

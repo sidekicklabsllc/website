@@ -2,12 +2,12 @@
 // in the "How each number is built" table, with a link to its primary source.
 // Two assumption sets: "conservative" is the default and sits below every published figure.
 (function () {
+  // Only sourced figures live here. The three assumptions we cannot source (new-patient share,
+  // visits per year, years retained) are read from the page instead: they are the same in both sets
+  // and the reader can dial them in, rather than us swinging the headline on our own guesswork.
   const SETS = {
-    // Only the sourced figures differ between the sets. newShare, visitsYr and years have no source
-    // behind them, so they are held at their conservative value in both: seven multipliers all moving
-    // at once compound to a ~4.8x swing, and letting our own guesswork drive that is indefensible.
-    conservative: { missed: 0.20, bookable: 0.34, lost: 0.25, newShare: 0.15, margin: 0.55, visitsYr: 2.0, years: 2, liftPP: 0.10 },
-    midpoint:     { missed: 0.30, bookable: 0.34, lost: 0.40, newShare: 0.15, margin: 0.75, visitsYr: 2.0, years: 2, liftPP: 0.20 },
+    conservative: { missed: 0.20, bookable: 0.34, lost: 0.15, margin: 0.55, liftPP: 0.10 },
+    midpoint:     { missed: 0.30, bookable: 0.34, lost: 0.21, margin: 0.75, liftPP: 0.20 },
   };
 
   const $ = (id) => document.getElementById(id);
@@ -16,7 +16,9 @@
   const pct = (v) => Math.round(v * 100) + "%";
 
   const calls = $("in-calls"), rev = $("in-rev"), refs = $("in-refs");
-  if (!calls || !rev || !refs) return;
+  // the three dial-able assumptions, cited inline in the table below the calculator
+  const newShare = $("in-newshare"), visitsYr = $("in-visits"), years = $("in-years");
+  if (!calls || !rev || !refs || !newShare || !visitsYr || !years) return;
 
   const presets = document.querySelectorAll(".preset[data-calls]");
   const setBtns = document.querySelectorAll(".preset[data-set]");
@@ -30,17 +32,18 @@
   function render() {
     const a = SETS[set];
     const nCalls = read(calls, 1500), nRev = read(rev, 150), nRefs = read(refs, 40);
+    const nShare = read(newShare, 15) / 100, nVisits = read(visitsYr, 2), nYears = read(years, 2);
 
     // One captured visit is worth its contribution margin, because the slot was going to sit empty
     // either way. A captured new patient is worth that margin repeated over their time with you.
     const perVisit = nRev * a.margin;
-    const ltv = nRev * a.visitsYr * a.years * a.margin;
+    const ltv = nRev * nVisits * nYears * a.margin;
 
     // Lever 1: calls that never reach a person.
     const unanswered = nCalls * a.missed;
     const bookable = unanswered * a.bookable;
     const lost = bookable * a.lost;
-    const lostNew = lost * a.newShare;
+    const lostNew = lost * nShare;
     const lostExisting = lost - lostNew;
     const callsMonth = lostNew * ltv + lostExisting * perVisit;
 
@@ -69,7 +72,7 @@
       " = <strong>" + num(lost) + "</strong> bookings lost a month.<br />" +
       "<strong>" + num(lostExisting) + "</strong> existing patients &times; " + usd(perVisit) +
       " contribution per visit, plus <strong>" + num(lostNew) + "</strong> new patients &times; " +
-      usd(ltv) + " over " + a.years + " years = <strong>" + usd(callsMonth) + "</strong> a month.<br />" +
+      usd(ltv) + " over " + nYears + " years = <strong>" + usd(callsMonth) + "</strong> a month.<br />" +
       "<strong>" + num(nRefs) + "</strong> referrals &times; <strong>+" + Math.round(a.liftPP * 100) +
       " points</strong> of completion = <strong>" + num(refExtra) + "</strong> more first visits &times; " +
       usd(ltv) + " = <strong>" + usd(refsMonth) + "</strong> a month.";
@@ -87,7 +90,7 @@
     render();
   }));
 
-  [calls, rev, refs].forEach((el) => el.addEventListener("input", () => {
+  [calls, rev, refs, newShare, visitsYr, years].forEach((el) => el.addEventListener("input", () => {
     if (el === calls) presets.forEach((o) => o.setAttribute("aria-pressed", "false"));
     render();
   }));

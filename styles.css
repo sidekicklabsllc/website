@@ -110,36 +110,6 @@ a:hover { color: var(--rose-700); }
     radial-gradient(500px 380px at 85% 100%, rgba(231, 84, 111, 0.08), transparent 70%);
   pointer-events: none;
 }
-.orb {
-  width: 128px; height: 128px;
-  margin: 0 auto 2.25rem; position: relative;
-  background: radial-gradient(circle at 35% 30%, #ffb3a0, var(--coral) 45%, var(--rose-700) 100%);
-  -webkit-mask-image: var(--heart-svg);
-  mask-image: var(--heart-svg);
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: center; mask-position: center;
-  animation: orb-pulse 4.5s ease-in-out infinite;
-}
-.orb::after {
-  content: ""; position: absolute; inset: -22px; z-index: -1;
-  background: radial-gradient(circle at 35% 30%, #ffb3a0, var(--coral) 45%, var(--rose-700) 100%);
-  -webkit-mask-image: var(--heart-svg);
-  mask-image: var(--heart-svg);
-  -webkit-mask-size: contain; mask-size: contain;
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: center; mask-position: center;
-  filter: blur(22px);
-  animation: orb-aura-pulse 4.5s ease-in-out infinite;
-}
-@keyframes orb-pulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 18px rgba(255, 106, 92, 0.3)); }
-  50% { transform: scale(1.217); filter: drop-shadow(0 0 60px rgba(255, 106, 92, 0.9)); }
-}
-@keyframes orb-aura-pulse {
-  0%, 100% { transform: scale(0.9416); opacity: 0.35; }
-  50% { transform: scale(1.1584); opacity: 0.75; }
-}
 
 .hero h1 { font-size: clamp(2.3rem, 5.5vw, 3.6rem); max-width: 21ch; margin: 0 auto 1.1rem; }
 .hero .lede {
@@ -324,7 +294,9 @@ footer {
 /* ---------- demo ---------- */
 /* --- see her work: the video right under the hero --- */
 .see { text-align: center; }
-#see { padding-top: 0; }
+#see { padding-top: 3.5rem; }
+.see .section-title { margin-bottom: 0.5rem; }
+.see .section-sub { margin: 0 auto 1.8rem; }
 .see .player {
   background: #000; border: 1px solid var(--sand-200); border-radius: var(--radius);
   overflow: hidden; box-shadow: 0 18px 50px rgba(44, 37, 33, 0.14); line-height: 0;
@@ -434,18 +406,42 @@ footer {
 /* ---------- homepage savings strip ---------- */
 .savings-strip {
   background: var(--sand-100); border-top: 1px solid var(--sand-200);
-  border-bottom: 1px solid var(--sand-200); padding: 1.9rem 0;
+  border-bottom: 1px solid var(--sand-200); padding: 1.7rem 0;
 }
 .savings-strip-inner {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1.6rem; flex-wrap: wrap;
 }
-.savings-strip h2 {
-  font-size: clamp(1.1rem, 2.4vw, 1.45rem); margin-bottom: 0.35rem; max-width: 26ch;
+/* the figure carries the weight, the sentence supports it - same pairing the
+   savings page uses for every number it prints */
+.savings-claim { display: flex; align-items: center; gap: 1rem; margin: 0; min-width: 0; }
+.savings-figure {
+  font-size: clamp(2.1rem, 4.6vw, 2.9rem); line-height: 1;
+  color: var(--rose-600); flex-shrink: 0;
 }
-.savings-strip p { color: var(--ink-soft); font-size: 0.95rem; max-width: 56ch; margin: 0; }
+.savings-text {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem; font-weight: 500; line-height: 1.4; color: var(--ink);
+  max-width: 34ch; text-wrap: balance;
+}
+.savings-src {
+  font-size: 0.8em; font-weight: 400; color: var(--ink-faint);
+  text-decoration: underline; margin-left: 0.4em; white-space: nowrap;
+}
+.savings-src:hover { color: var(--rose-600); }
 .savings-strip .btn { white-space: nowrap; flex-shrink: 0; }
 @media (max-width: 640px) {
-  .savings-strip-inner { flex-direction: column; align-items: flex-start; }
+  .savings-strip-inner { flex-direction: column; align-items: flex-start; gap: 1.1rem; }
+  .savings-claim { gap: 0.8rem; }
   .savings-strip .btn { width: 100%; text-align: center; }
 }
+
+/* editable assumptions, cited in place in the sources table */
+.tweak-cell { text-align: center; white-space: nowrap; color: var(--ink); }
+.tweak {
+  width: 4.2rem; border: 1px solid var(--sand-200); border-radius: 0.45rem;
+  background: var(--sand-50); padding: 0.28rem 0.4rem; text-align: right;
+  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink);
+}
+.tweak:hover { border-color: var(--rose-500); }
+.tweak:focus-visible { outline: 2px solid var(--rose-500); outline-offset: 1px; }

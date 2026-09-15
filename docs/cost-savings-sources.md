@@ -34,8 +34,8 @@ A claimed "2024 Pew survey" on voicemail avoidance also surfaced in search and a
 
 | Used for | Figure | Source | Tier |
 |---|---|---|---|
-| Calls not reaching a person | 31% of 11,552,668 calls at 8,280 locations | [Patient Prism 2025](https://www.patientprism.com/report/dental-patient-access-report/) | vendor platform data, large N, stated method |
-| same, corroboration | ~29% | Invoca 2024 | vendor platform data |
+| Calls not reaching a person | 31% of 11,552,668 calls at 8,280 **dental and DSO** locations | [Patient Prism 2025](https://www.patientprism.com/report/dental-patient-access-report/) | vendor platform data, large N, stated method |
+| same, corroboration (healthcare-wide) | ~29% | Invoca 2024 | vendor platform data |
 | same, peer-reviewed floor | in-queue abandonment 12.0% -> 8.3%, 285 facilities | [AJMC 2020](https://www.ajmc.com/view/call-center-performance-affects-patient-perceptions-of-access-and-satisfaction) | peer-reviewed (narrower metric) |
 | Bookable share of calls | 34 of every 100 calls were booking opportunities; 21 became appointments | Patient Prism 2025 | vendor platform data |
 | Callers who never retry | 21% immediately call another business | [CallRail 2025, n=1,000](https://www.callrail.com/blog/missed-calls-cost-businesses-more-than-ever) | vendor survey, stated N; general consumers, not patients |
@@ -63,7 +63,8 @@ The model originally used **58% as "callers who never try again," sourced to Cal
 overreach: CallRail measured *"58% do not leave a voicemail,"* which is not the same as never calling
 back, and its 78%/82% figures are lifetime-ever and stated-intent, not per-call probabilities. The
 only figure in that survey that measures this call being lost is **21% immediately call another
-business**. The model now uses 25% conservative / 40% midpoint, anchored on that 21% as the floor.
+business**. The model now uses **15% conservative / 21% midpoint**: midpoint is exactly the measured
+figure and claims nothing above it, conservative sits below it.
 
 At the same time, the two assumption sets were moving **seven multipliers at once**, compounding to a
 4.79x spread between Conservative and Midpoint even though no single parameter moved more than 1.39x.
@@ -71,21 +72,34 @@ Worse, 1.65x of that swing came from the three assumptions tagged "ours," which 
 all. Those three (new-patient share, visits per year, years retained) are now **held at their
 conservative value in both sets**, so the toggle only ever moves figures that have a source.
 
-Result: Conservative $52,445 / Midpoint $162,999 at the default inputs, a 3.11x spread. The remaining
+Result: Conservative $37,803 / Midpoint $106,094 at the default inputs, a 2.81x spread. The remaining
 spread is the genuine width of the published evidence (missed-call rate 1.35x, never-retry 1.42x,
 contribution margin 1.36x, referral lift 1.30x) and cannot honestly be compressed further. A
 regression test asserts the spread stays under 3.5x.
 
 ## Assumptions that are ours, not sourced
 
-Labeled on the page with the "ours" tag, and held constant across both assumption sets. No dataset
-exists for any of them:
+Labeled on the page with the "ours" tag and held constant across both assumption sets. They are also
+**editable in place**: each is rendered as a number input in the row that cites it, so a reader can
+dial in their own figure rather than take ours. The values below are the defaults, chosen as floors.
+No dataset exists for any of them:
 
 - Share of lost bookings that are new patients (15%)
 - Visits per patient per year (2.0)
 - Years a new patient stays (2) - informed by Accenture's 30%/yr switching, which implies 3-4 years,
   well short of the 7-10 that vendor LTV pages use
 - That unanswered calls contain the same 34% share of booking opportunities as answered ones
+
+## Correction made 2026-09-15 (second pass)
+
+The Patient Prism 31% comes from the **Dental Patient Access Report**: 8,280 dental and DSO
+locations. Three pages had dropped the word "dental", which silently promoted dental data to a claim
+about medical practices. All three now name the population, and lean on Invoca's ~29% (healthcare
+generally) for the medical read. Two further overstatements in the homepage strip were fixed at the
+same time: "most of them were trying to book" became "about a third" (the source says 34 of every 100
+calls were booking opportunities, which is not "most"), and "every assumption sourced" became "every
+figure either traced to a primary source or labelled as our own assumption", since the page itself
+tags three assumptions as unsourced.
 
 ## Known gaps
 
