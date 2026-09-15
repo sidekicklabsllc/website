@@ -336,11 +336,11 @@ footer {
   border: 1px solid var(--sand-200); border-radius: 0.8rem; padding: 0 0.9rem;
   margin-bottom: 0.7rem; background: #fff;
 }
-.field label { font-size: 0.93rem; font-weight: 600; color: var(--ink); }
+/* the label yields and wraps; the value keeps a fixed width so it is never clipped */
+.field label { font-size: 0.93rem; font-weight: 600; color: var(--ink); flex: 1 1 auto; min-width: 0; }
 .field input {
-  flex: 1; min-width: 0; border: 0; background: transparent; padding: 0.7rem 0.8rem;
-  font: inherit; font-size: 1rem; color: var(--ink); outline: none;
-  text-align: right; max-width: 8rem;
+  flex: 0 0 6rem; width: 6rem; border: 0; background: transparent; padding: 0.7rem 0.4rem;
+  font: inherit; font-size: 1rem; color: var(--ink); outline: none; text-align: right;
 }
 .field input:focus-visible { outline: 2px solid var(--rose-500); outline-offset: 2px; border-radius: 0.4rem; }
 .preset-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
@@ -445,3 +445,40 @@ footer {
 }
 .tweak:hover { border-color: var(--rose-500); }
 .tweak:focus-visible { outline: 2px solid var(--rose-500); outline-offset: 1px; }
+
+/* ---------- tables on small screens ----------
+   A four-column sources table cannot survive 390px, and side-scrolling a table the
+   reader is meant to audit is worse than stacking it. Each row becomes a card. */
+@media (max-width: 720px) {
+  .table-scroll { overflow-x: visible; }
+  .src-table, .src-table tbody, .src-table tr, .src-table td { display: block; width: 100%; }
+  .src-table thead { display: none; }
+  .src-table {
+    border-collapse: separate; font-size: 0.92rem;
+  }
+  .src-table tr {
+    background: #fff; border: 1px solid var(--sand-200); border-radius: 0.9rem;
+    padding: 1rem 1.1rem; margin-bottom: 0.9rem;
+  }
+  .src-table td { border-bottom: 0; padding: 0; }
+  .src-table td:first-child {
+    font-weight: 700; color: var(--ink); font-size: 1rem; line-height: 1.35;
+    padding-bottom: 0.7rem;
+  }
+  .src-table td[data-label] {
+    display: flex; align-items: center; gap: 0.4rem;
+    border-top: 1px solid var(--sand-100); padding: 0.5rem 0;
+    font-weight: 600; color: var(--ink);
+  }
+  .src-table td[data-label]::before {
+    content: attr(data-label); margin-right: auto;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.09em;
+    color: var(--ink-faint); font-weight: 700;
+  }
+  .src-table td:last-child {
+    border-top: 1px solid var(--sand-100); margin-top: 0.5rem; padding-top: 0.7rem;
+    line-height: 1.55;
+  }
+  .tweak-cell { text-align: right; }
+  .tweak { width: 3.8rem; }
+}

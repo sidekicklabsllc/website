@@ -206,7 +206,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Calls that never reach a person</td><td>20%</td><td>30%</td>
+                <td>Calls that never reach a person</td><td data-label="Conservative">20%</td><td data-label="Midpoint">30%</td>
                 <td><span class="tag tag-med">fair</span>
                   31% of 11,552,668 patient calls across 8,280 dental and DSO locations disconnected before
                   reaching an agent (Patient Prism, 2025). That is the largest dataset we found, but it is
@@ -217,13 +217,13 @@
                   which excludes busy signals and after-hours rollover. We start below all of them.</td>
               </tr>
               <tr>
-                <td>Of those, real booking opportunities</td><td>34%</td><td>34%</td>
+                <td>Of those, real booking opportunities</td><td data-label="Conservative">34%</td><td data-label="Midpoint">34%</td>
                 <td><span class="tag tag-med">fair</span>
                   Of every 100 calls in the Patient Prism dataset, 34 were booking opportunities and 21 became
                   appointments. We assume unanswered calls contain the same share as answered ones.</td>
               </tr>
               <tr>
-                <td>Callers who never try again</td><td>15%</td><td>21%</td>
+                <td>Callers who never try again</td><td data-label="Conservative">15%</td><td data-label="Midpoint">21%</td>
                 <td><span class="tag tag-med">fair</span>
                   21% of consumers say they immediately call another business when a call goes unanswered
                   (CallRail, 2025, n=1,000). Midpoint uses exactly that measured figure and nothing above it;
@@ -234,12 +234,12 @@
                   healthcare-specific study of this.</td>
               </tr>
               <tr>
-                <td>Share of lost bookings that are new patients</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-newshare" value="15" min="0" step="1" inputmode="decimal" aria-label="Share of lost bookings that are new patients, percent" />%</td>
+                <td>Share of lost bookings that are new patients</td><td colspan="2" class="tweak-cell" data-label="Both sets"><input type="number" class="tweak" id="in-newshare" value="15" min="0" step="1" inputmode="decimal" aria-label="Share of lost bookings that are new patients, percent" />%</td>
                 <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong>
                   No dataset splits missed calls into new and established patients. Set it to whatever your front desk would say.</td>
               </tr>
               <tr>
-                <td>Contribution margin per visit</td><td>55%</td><td>75%</td>
+                <td>Contribution margin per visit</td><td data-label="Conservative">55%</td><td data-label="Midpoint">75%</td>
                 <td><span class="tag tag-strong">solid</span>
                   Overhead runs about 60% of practice revenue
                   (<a href="https://www.mgma.com/articles/24-strategies-to-grow-revenue-and-control-costs-in-your-medical-practice" rel="nofollow noopener" target="_blank">MGMA</a>),
@@ -250,11 +250,11 @@
                   A purely marginal view supports 90%. We use 55% and 75%.</td>
               </tr>
               <tr>
-                <td>Visits per patient per year</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-visits" value="2.0" min="0" step="0.5" inputmode="decimal" aria-label="Visits per patient per year" /></td>
+                <td>Visits per patient per year</td><td colspan="2" class="tweak-cell" data-label="Both sets"><input type="number" class="tweak" id="in-visits" value="2.0" min="0" step="0.5" inputmode="decimal" aria-label="Visits per patient per year" /></td>
                 <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong> Planning assumption. Specialty and dental run higher.</td>
               </tr>
               <tr>
-                <td>Years a new patient stays</td><td colspan="2" class="tweak-cell"><input type="number" class="tweak" id="in-years" value="2" min="0" step="1" inputmode="decimal" aria-label="Years a new patient stays" /></td>
+                <td>Years a new patient stays</td><td colspan="2" class="tweak-cell" data-label="Both sets"><input type="number" class="tweak" id="in-years" value="2" min="0" step="1" inputmode="decimal" aria-label="Years a new patient stays" /></td>
                 <td><span class="tag tag-weak">ours</span> <strong>Change it right here.</strong>
                   There is no current national figure. 30% of consumers picked a new provider in a single year
                   and 25% switched out of dissatisfaction
@@ -263,7 +263,7 @@
                   We use two and three.</td>
               </tr>
               <tr>
-                <td>Referral completion lift from same-day outreach</td><td>+10 pts</td><td>+20 pts</td>
+                <td>Referral completion lift from same-day outreach</td><td data-label="Conservative">+10 pts</td><td data-label="Midpoint">+20 pts</td>
                 <td><span class="tag tag-strong">solid</span>
                   Only 34.8% of 103,737 referral scheduling attempts reached a documented completed appointment
                   (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5910374/" rel="nofollow noopener" target="_blank">Journal of General Internal Medicine, 2018</a>).
