@@ -1,0 +1,35 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: content audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/audit.py
+
+  render:
+    name: browser render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright and browsers
+        working-directory: scripts
+        # --with-deps pulls the system libraries the browsers need on a bare runner
+        run: |
+          npm install --no-fund --no-audit
+          npx playwright install --with-deps chromium webkit
+      - run: node scripts/mobile_check.mjs

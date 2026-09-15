@@ -47,6 +47,10 @@ Redirect stubs and `404.html` are skipped.
 
 Useful flags: `--engine chromium` to halve the runtime, `--width 390` for one size.
 
+Both gates also run in CI on every push and pull request to `main`
+(`.github/workflows/checks.yml`). GitHub Pages deploys regardless, so a failure
+shows as a red check rather than blocking the site.
+
 ## Deploy
 
 Host the `website/` folder on any static host (Vercel, Netlify, GitHub Pages, S3).
