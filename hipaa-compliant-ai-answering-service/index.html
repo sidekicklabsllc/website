@@ -118,55 +118,51 @@
 
       <p>
         "HIPAA compliant" on a vendor's home page tells you almost nothing. There is no HIPAA
-        certification; the law describes obligations, and a vendor either meets them in specific,
-        checkable ways or it does not. This page explains what those obligations mean for an AI
-        answering service, what to ask any vendor, and how Samantha answers each question.
+        certification; a vendor either meets specific, checkable obligations or it does not. This page
+        explains what to ask any AI answering service and how Samantha answers.
       </p>
 
       <div class="callout"><p><strong>The short version.</strong> An AI answering service that touches
-      patient calls is a business associate. It must sign a BAA, keep protected health information on
-      infrastructure that is itself covered by a BAA, limit what it discloses to the minimum necessary,
-      log access, and retain records only as long as required. Ask to see each of those, not a badge.</p></div>
+      patient calls is a business associate. It must sign a BAA, keep PHI on BAA-covered infrastructure,
+      limit disclosures, log access, and retain records only as long as required. Ask to see those controls,
+      not a badge.</p></div>
 
       <h2>Why an answering service is a business associate</h2>
       <p>
         A caller who says "I need to move my appointment with Dr. Patel, I'm having more pain" has
-        just disclosed protected health information: their identity, that they are a patient, and a
-        symptom. Anything that hears, stores, transcribes, or relays that call is handling PHI on the
-        practice's behalf. Under the Privacy Rule that makes the service a business associate, and the
-        practice may not share PHI with it until a Business Associate Agreement is in place.
+        disclosed PHI: identity, patient status, and a symptom. Anything that hears, stores, transcribes,
+        or relays that call is handling PHI for the practice. Under the Privacy Rule, that makes the
+        service a business associate, and a BAA must be in place first.
       </p>
 
       <h2>Seven questions to ask any AI answering service</h2>
       <ol>
         <li><strong>Will you sign a BAA before we go live?</strong> If the answer is "we are working on it", stop.</li>
-        <li><strong>Which cloud services process the audio, the transcript, and the language model, and are those services under a BAA too?</strong> Many AI vendors run on consumer-grade APIs that explicitly exclude PHI.</li>
+        <li><strong>Which cloud services process audio, transcripts, and model calls, and are those services under a BAA too?</strong> Many AI vendors run on consumer APIs that exclude PHI.</li>
         <li><strong>What is in the notification your staff receives?</strong> A text message that says "Jane Doe called about her biopsy results" has just sent PHI over SMS.</li>
         <li><strong>What does the system log?</strong> Debug logs that capture caller speech or full phone numbers are a breach waiting to happen.</li>
         <li><strong>How is the caller's identity verified before appointment details are discussed?</strong> Caller ID alone is not verification.</li>
         <li><strong>How long are recordings and transcripts retained, and who can delete them?</strong></li>
-        <li><strong>What happens if the system is misconfigured?</strong> The honest answer for most products is "it keeps running". Ask what would stop it.</li>
+        <li><strong>What happens if the system is misconfigured?</strong> Ask what stops it from running.</li>
       </ol>
 
       <h2>How Samantha answers each one</h2>
       <div class="trust-list">
         <div class="trust-item"><span class="check">&#10003;</span><p><strong>BAA, signed by Sidekick Labs LLC,</strong> before any live patient traffic. Ask for it on the <a href="/#contact">intro call</a>.</p></div>
-        <div class="trust-item"><span class="check">&#10003;</span><p><strong>BAA-covered infrastructure end to end.</strong> Telephony, speech recognition, the language model, and speech synthesis all run on HIPAA-eligible services that are themselves under a BAA. No consumer API keys.</p></div>
-        <div class="trust-item"><span class="check">&#10003;</span><p><strong>Zero-PHI notifications.</strong> Staff alerts say only that a new message or booking exists. The content lives behind login in Samantha Hub. Nothing patient-identifying rides in an SMS or push notification.</p></div>
+        <div class="trust-item"><span class="check">&#10003;</span><p><strong>BAA-covered infrastructure end to end.</strong> Telephony, speech recognition, the language model, and speech synthesis run on HIPAA-eligible services under BAAs. No consumer API keys.</p></div>
+        <div class="trust-item"><span class="check">&#10003;</span><p><strong>Zero-PHI notifications.</strong> Staff alerts say only that a new message or booking exists. Content stays behind login in Samantha Hub.</p></div>
         <div class="trust-item"><span class="check">&#10003;</span><p><strong>Redacted logs.</strong> System logs never reproduce caller speech or full phone numbers. Recordings and transcripts are stored separately, encrypted, behind authentication.</p></div>
         <div class="trust-item"><span class="check">&#10003;</span><p><strong>Identity before information.</strong> Returning callers are recognized by verified caller ID, but no appointment detail is shared or changed until the caller confirms full name and date of birth.</p></div>
         <div class="trust-item"><span class="check">&#10003;</span><p><strong>Bounded retention with audit trails.</strong> Records are kept only as long as the practice requires, and access is logged to meet HIPAA documentation rules.</p></div>
-        <div class="trust-item"><span class="check">&#10003;</span><p><strong>Compliance verified in code at startup.</strong> If any part of the configuration is not PHI-safe, Samantha refuses to start. A misconfiguration cannot quietly run overnight.</p></div>
+        <div class="trust-item"><span class="check">&#10003;</span><p><strong>Compliance verified in code at startup.</strong> If any configuration is not PHI-safe, Samantha refuses to start.</p></div>
       </div>
 
       <h2>What "HIPAA compliant" does not mean</h2>
       <p>
         It does not mean the AI may give medical advice. Samantha never triages, interprets symptoms or
-        results, or makes clinical or billing decisions; anything clinical becomes a message for your
-        staff. It does not mean your practice's own obligations disappear: you still need your own
-        policies, workforce training, and a risk analysis that includes the answering service. And it
-        does not mean a badge. If a vendor cannot walk you through the seven questions above with
-        specifics, the badge is decoration.
+        results, or makes clinical or billing decisions; anything clinical becomes a staff message. It
+        also does not replace your practice's own policies, training, and risk analysis. If a vendor
+        cannot answer the seven questions above with specifics, the badge is decoration.
       </p>
       <p>
         Wondering whether an AI receptionist is the right shape of solution at all? Read
