@@ -1,0 +1,187 @@
+:root.copy-editor-active {
+  scroll-padding-top: 7.5rem;
+}
+.copy-editor-active body {
+  padding-top: 4.5rem !important;
+}
+
+.copy-editor-active .nav {
+  top: 4.5rem !important;
+}
+
+.copy-editor-toolbar,
+.copy-editor-toolbar * {
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+
+.copy-editor-toolbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 2147483647;
+  min-height: 4.5rem;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #2c2521;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #ddcdbb;
+  box-shadow: 0 4px 18px rgba(44, 37, 33, 0.12);
+}
+
+.copy-editor-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-right: 0.4rem;
+  white-space: nowrap;
+}
+
+.copy-editor-brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.copy-editor-brand small {
+  color: #766b64;
+  font-size: 0.7rem;
+}
+
+.copy-editor-heart {
+  color: #df3c60;
+  font-size: 1.5rem;
+}
+
+.copy-editor-page-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #766b64;
+  font-size: 0.78rem;
+}
+
+.copy-editor-page {
+  max-width: 19rem;
+  min-height: 2.4rem;
+  padding: 0.4rem 2rem 0.4rem 0.7rem;
+  color: #2c2521;
+  background: #faf7f2;
+  border: 1px solid #ddcdbb;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.copy-editor-status {
+  margin-left: auto;
+  color: #766b64;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.copy-editor-error {
+  color: #a31f3e;
+}
+
+.copy-editor-button,
+.copy-editor-exit {
+  min-height: 2.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #d7c3ad;
+  background: #fff;
+  color: #4a403a;
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.copy-editor-save {
+  color: #fff;
+  border-color: #df3c60;
+  background: #df3c60;
+}
+
+.copy-editor-button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+
+.copy-editor-text {
+  border-radius: 0.16em;
+  outline: 1px dashed rgba(223, 60, 96, 0.38);
+  outline-offset: 0.12em;
+  cursor: text;
+  transition: outline-color 120ms ease, background 120ms ease;
+}
+
+.copy-editor-text:hover {
+  outline-color: #df3c60;
+  background: rgba(223, 60, 96, 0.07);
+}
+
+.copy-editor-text:focus {
+  outline: 2px solid #df3c60;
+  background: #fff4f6;
+}
+
+.copy-editor-text.copy-editor-changed {
+  outline-style: solid;
+  outline-color: #ba7a16;
+  background: #fff5d9;
+}
+
+@media (max-width: 760px) {
+  :root.copy-editor-active {
+    scroll-padding-top: 11rem;
+  }
+
+  .copy-editor-active body {
+    padding-top: 8.8rem !important;
+  }
+
+  .copy-editor-active .nav {
+    top: 8.8rem !important;
+  }
+
+  .copy-editor-toolbar {
+    min-height: 8.8rem;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .copy-editor-brand {
+    width: 100%;
+  }
+
+  .copy-editor-brand small {
+    display: none;
+  }
+
+  .copy-editor-page-label {
+    flex: 1 1 100%;
+  }
+
+  .copy-editor-page {
+    flex: 1;
+    max-width: none;
+  }
+
+  .copy-editor-status {
+    width: 100%;
+    margin: 0;
+    order: 3;
+  }
+
+  .copy-editor-button,
+  .copy-editor-exit {
+    flex: 1;
+    text-align: center;
+  }
+}

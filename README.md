@@ -20,6 +20,26 @@ python3 -m http.server 8765            # from the repo root
 # then open http://127.0.0.1:8765
 ```
 
+## Edit copy visually
+
+The local copy editor renders the real site and lets you click visible text to edit it without
+working directly in HTML:
+
+```bash
+cd scripts
+npm run edit
+```
+
+Then open `http://127.0.0.1:8765/__copy_editor/`. Choose a page from the toolbar, click any
+outlined text, type, and press **Save changes**. Saves update only the edited text in the source
+HTML; links, emphasis, layout markup, styles, and scripts are left intact. The editor listens only
+on localhost and is not part of the deployed website.
+
+If port 8765 is already in use, start it on another port with `npm run edit -- --port 8877`.
+
+Use **Discard** to undo unsaved edits on the current page. Git remains the safety net for changes
+that have already been saved.
+
 ## Checks before you push
 
 Two gates. Both exit non-zero on failure.
