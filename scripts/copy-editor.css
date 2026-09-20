@@ -113,6 +113,9 @@
 }
 
 .copy-editor-text {
+  display: inline;
+  white-space: normal !important;
+  text-align: inherit;
   border-radius: 0.16em;
   outline: 1px dashed rgba(223, 60, 96, 0.38);
   outline-offset: 0.12em;
@@ -134,6 +137,25 @@
   outline-style: solid;
   outline-color: #ba7a16;
   background: #fff5d9;
+}
+
+/* Primary buttons use white text. Keep editor focus/change states dark enough
+   that the label stays visible while it is being rewritten. */
+.btn-primary .copy-editor-text {
+  outline-color: rgba(255, 255, 255, 0.72);
+}
+
+.btn-primary .copy-editor-text:hover,
+.btn-primary .copy-editor-text:focus {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  outline-color: #fff;
+}
+
+.btn-primary .copy-editor-text.copy-editor-changed {
+  color: #fff;
+  background: rgba(255, 232, 174, 0.2);
+  outline-color: #ffe8ae;
 }
 
 @media (max-width: 760px) {

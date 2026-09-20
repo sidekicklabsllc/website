@@ -7,7 +7,11 @@
   document.documentElement.classList.add("copy-editor-active");
   const runs = [...document.querySelectorAll("[data-copy-id]")];
   for (const run of runs) {
-    run.contentEditable = "plaintext-only";
+    // Chromium forces `white-space: pre-wrap` on plaintext-only fields, which
+    // exposes the indentation used to format article HTML. Standard edit mode
+    // keeps the rendered layout intact; the paste handler below still strips
+    // rich text before anything is saved.
+    run.contentEditable = "true";
     run.spellcheck = true;
     run.dataset.copyOriginal = run.textContent;
     run.setAttribute("role", "textbox");
