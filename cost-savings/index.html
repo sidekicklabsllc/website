@@ -116,28 +116,23 @@
         <div aria-live="polite">
           <div class="result-big" style="margin-bottom:1.8rem">
             <div class="label">Revenue you are not capturing</div>
-            <div class="value" id="r-total">$37,803</div>
+            <div class="value" id="r-total">$24,625</div>
             <div class="sub" id="r-total-sub"></div>
-            <p class="result-note">
-              Worked out from the figures below, all of which you can change. This is contribution, not
-              gross billing: the slot was going to sit empty either way, so almost none of the cost of
-              filling it is new.
-            </p>
           </div>
         </div>
 
         <h2>Your practice</h2>
 
         <div class="preset-row" role="group" aria-label="Practice size">
-          <button type="button" class="preset" data-calls="600" aria-pressed="false">1 to 3 providers</button>
-          <button type="button" class="preset" data-calls="1500" aria-pressed="true">4 to 10 providers</button>
+          <button type="button" class="preset" data-calls="600" aria-pressed="true">1 to 3 providers</button>
+          <button type="button" class="preset" data-calls="1500" aria-pressed="false">4 to 10 providers</button>
           <button type="button" class="preset" data-calls="3000" aria-pressed="false">10+ providers</button>
           <button type="button" class="preset" data-calls="6000" aria-pressed="false">Multi-site</button>
         </div>
 
         <div class="field">
           <label for="in-calls">Inbound calls a month</label>
-          <input type="number" id="in-calls" value="1500" min="0" step="50" inputmode="numeric" />
+          <input type="number" id="in-calls" value="600" min="0" step="50" inputmode="numeric" />
         </div>
         <p class="field-note">All inbound calls to the practice line, not just after hours.</p>
 

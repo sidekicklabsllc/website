@@ -360,7 +360,6 @@ footer {
 .result-big .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; }
 .result-big .value { font-family: "Fraunces", Georgia, serif; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; margin: 0.3rem 0; }
 .result-big .sub { font-size: 0.9rem; opacity: 0.9; }
-.result-big .result-note { font-size: 0.85rem; opacity: 0.85; margin-top: 0.8rem; line-height: 1.45; }
 .result-alt { background: linear-gradient(135deg, var(--night-2), var(--night)); }
 .compare-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.3rem; }
 .policy .kicker { color: var(--rose-600); font-size: 0.78rem; margin-bottom: 0.7rem; }

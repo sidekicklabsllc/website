@@ -31,7 +31,7 @@
 
   function render() {
     const a = SETS[set];
-    const nCalls = read(calls, 1500), nRev = read(rev, 150), nRefs = read(refs, 40);
+    const nCalls = read(calls, 600), nRev = read(rev, 150), nRefs = read(refs, 40);
     const nShare = read(newShare, 15) / 100, nVisits = read(visitsYr, 2), nYears = read(years, 2);
 
     // One captured visit is worth its contribution margin, because the slot was going to sit empty
