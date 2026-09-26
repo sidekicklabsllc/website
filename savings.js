@@ -54,8 +54,7 @@
     const year = (callsMonth + refsMonth) * 12;
 
     $("r-total").textContent = usd(year);
-    $("r-total-sub").textContent = usd(callsMonth + refsMonth) + " a month, from " +
-      num(lost + refExtra) + " visits that otherwise do not get booked";
+    $("r-total-sub").textContent = "Includes new-patient value over " + nYears + (nYears === 1 ? " year" : " years");
     $("r-calls-val").textContent = usd(callsMonth * 12);
     $("r-refs-val").textContent = usd(refsMonth * 12);
     $("r-calls-sub").textContent = num(lost) + " bookings lost a month, of which " +
@@ -72,10 +71,12 @@
       " = <strong>" + num(lost) + "</strong> bookings lost a month.<br />" +
       "<strong>" + num(lostExisting) + "</strong> existing patients &times; " + usd(perVisit) +
       " contribution per visit, plus <strong>" + num(lostNew) + "</strong> new patients &times; " +
-      usd(ltv) + " over " + nYears + " years = <strong>" + usd(callsMonth) + "</strong> a month.<br />" +
+      usd(ltv) + " over " + nYears + " years = <strong>" + usd(callsMonth) + "</strong> in estimated contribution from each month’s missed calls.<br />" +
       "<strong>" + num(nRefs) + "</strong> referrals &times; <strong>+" + Math.round(a.liftPP * 100) +
       " points</strong> of completion = <strong>" + num(refExtra) + "</strong> more first visits &times; " +
-      usd(ltv) + " = <strong>" + usd(refsMonth) + "</strong> a month.";
+      usd(ltv) + " = <strong>" + usd(refsMonth) + "</strong> in estimated contribution from each month’s referrals.<br />" +
+      "Combined monthly opportunity &times; 12 = <strong>" + usd(year) +
+      "</strong> from one year of calls and referrals, including future patient value.";
   }
 
   presets.forEach((b) => b.addEventListener("click", () => {
@@ -94,6 +95,31 @@
     if (el === calls) presets.forEach((o) => o.setAttribute("aria-pressed", "false"));
     render();
   }));
+
+  document.querySelectorAll(".calc-help").forEach((help) => {
+    const button = help.querySelector(".info-button");
+    const explanation = document.getElementById(button.getAttribute("aria-controls"));
+    let pinned = false;
+    function show(open) {
+      button.setAttribute("aria-expanded", String(open));
+      explanation.hidden = !open;
+    }
+    button.addEventListener("mouseenter", () => show(true));
+    button.addEventListener("focus", () => show(true));
+    button.addEventListener("click", () => { pinned = !pinned; show(pinned); });
+    help.addEventListener("mouseleave", () => {
+      if (!pinned && document.activeElement !== button) show(false);
+    });
+    help.addEventListener("focusout", (event) => {
+      if (!help.contains(event.relatedTarget)) { pinned = false; show(false); }
+    });
+    document.addEventListener("click", (event) => {
+      if (!help.contains(event.target)) { pinned = false; show(false); }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") { pinned = false; show(false); }
+    });
+  });
 
   render();
 })();

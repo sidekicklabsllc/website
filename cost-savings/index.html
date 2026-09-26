@@ -103,8 +103,7 @@
       <h1>What the calls you miss are actually worth</h1>
       <p class="lede">
         A phone call that isn't answered is a booking that doesn't happen. A referral that sits for a week is
-        a patient who goes somewhere else. Put your own numbers in and see how much it costs your practice, with
-        every assumption written down and sourced.
+        a patient who goes somewhere else. Put your own numbers in and see how much it costs your practice.
       </p>
     </div>
   </header>
@@ -115,18 +114,31 @@
       <div class="calc-panel">
         <div aria-live="polite">
           <div class="result-big" style="margin-bottom:1.8rem">
-            <div class="label">Revenue you are not capturing</div>
+            <div class="label">Estimated contribution opportunity</div>
             <div class="value" id="r-total">$24,625</div>
+            <div class="sub">From one year of missed calls and incoming referrals</div>
             <div class="sub" id="r-total-sub"></div>
           </div>
         </div>
 
-        <h2>Your practice</h2>
+        <div class="calc-help">
+          <h2>How conservative do you want to be? <button type="button" class="info-button" aria-label="About conservative and midpoint estimates" aria-expanded="false" aria-controls="assumption-help">ⓘ</button></h2>
+          <p class="info-explanation" id="assumption-help" hidden>Conservative uses lower assumptions for missed calls, lost bookings, contribution margin, and referral improvements. Midpoint uses higher assumptions. Both use your practice inputs and the same patient-retention settings.</p>
+        </div>
+        <div class="preset-row" role="group" aria-label="Assumption set" style="margin-bottom:1.6rem">
+          <button type="button" class="preset" data-set="conservative" aria-pressed="true">Conservative</button>
+          <button type="button" class="preset" data-set="midpoint" aria-pressed="false">Midpoint</button>
+        </div>
+
+        <div class="calc-help">
+          <h2>Your practice <button type="button" class="info-button" aria-label="About practice size" aria-expanded="false" aria-controls="practice-help">ⓘ</button></h2>
+          <p class="info-explanation" id="practice-help" hidden>Choose the range that best matches the providers in your practice. Choose Multi-site if you operate across multiple locations. Then adjust the figures below to match your practice.</p>
+        </div>
 
         <div class="preset-row" role="group" aria-label="Practice size">
           <button type="button" class="preset" data-calls="600" aria-pressed="true">1 to 3 providers</button>
           <button type="button" class="preset" data-calls="1500" aria-pressed="false">4 to 10 providers</button>
-          <button type="button" class="preset" data-calls="3000" aria-pressed="false">10+ providers</button>
+          <button type="button" class="preset" data-calls="3000" aria-pressed="false">11+ providers</button>
           <button type="button" class="preset" data-calls="6000" aria-pressed="false">Multi-site</button>
         </div>
 
@@ -151,27 +163,28 @@
         </div>
         <p class="field-note">Leave at zero if your practice does not take referrals.</p>
 
-        <h2 style="margin-top:1.8rem">How conservative do you want to be?</h2>
-        <div class="preset-row" role="group" aria-label="Assumption set" style="margin-bottom:1.6rem">
-          <button type="button" class="preset" data-set="conservative" aria-pressed="true">Conservative</button>
-          <button type="button" class="preset" data-set="midpoint" aria-pressed="false">Midpoint</button>
-        </div>
         <div aria-live="polite">
           <div class="result-split">
             <div class="result-sm">
               <div class="label">Calls that never reach a person</div>
-              <div class="value" id="r-calls-val"></div>
+              <div class="value"><span id="r-calls-val"></span> <span class="result-period">per year</span></div>
               <div class="sub" id="r-calls-sub"></div>
             </div>
             <div class="result-sm">
-              <div class="label">Referrals worked the same day</div>
-              <div class="value" id="r-refs-val"></div>
+              <div class="label">Following up on referrals the same day</div>
+              <div class="value"><span id="r-refs-val"></span> <span class="result-period">per year</span></div>
               <div class="sub" id="r-refs-sub"></div>
             </div>
           </div>
 
-          <p class="chain" id="r-chain"></p>
+          <details class="calc-details">
+            <summary>See the calculation</summary>
+            <p class="chain" id="r-chain"></p>
+          </details>
         </div>
+
+        <p class="estimate-note">The estimate accounts for the cost of providing each visit and includes the value of future visits from new patients. That value may be realized
+          over several years. Samantha’s fees have not been deducted.</p>
 
         <div class="calc-cta">
           <a class="btn btn-primary btn-lg" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a 15-minute call</a>
@@ -183,7 +196,9 @@
       </div>
 
       <div class="assumptions">
-        <h2>How each number is built</h2>
+        <details class="calc-details">
+          <summary>Assumptions and sources — view or adjust</summary>
+          <div class="calc-details-body">
         <p>
           Every multiplier the estimator uses, where it came from, and how much weight it deserves.
           <span class="tag tag-strong">solid</span> means peer-reviewed, government, or a named dataset
@@ -255,7 +270,7 @@
                   and 25% switched out of dissatisfaction
                   (<a href="https://www.healthcaredive.com/news/patients-switching-providers-genz-millenial-accenture/641866/" rel="nofollow noopener" target="_blank">Accenture, 2022, n=10,000</a>),
                   which implies three to four years, not the seven to ten that lifetime-value pages like to use.
-                  We use two and three.</td>
+                  The default is two years in both sets; adjust it to match your practice.</td>
               </tr>
               <tr>
                 <td>Referral completion lift from same-day outreach</td><td data-label="Conservative">+10 pts</td><td data-label="Midpoint">+20 pts</td>
@@ -272,7 +287,12 @@
           </table>
         </div>
 
-        <h2>Why speed is the whole argument on referrals</h2>
+          </div>
+        </details>
+
+        <details class="calc-details">
+          <summary>Why referral timing matters</summary>
+          <div class="calc-details-body">
         <p>
           The referral you booked and the referral you lost are separated mostly by time. Across 103,737
           scheduling attempts, completed referrals had a mean wait of <strong>20.1 days</strong> and
@@ -296,7 +316,12 @@
           <a href="/ai-referral-outreach-calls/">How Samantha works a referral list</a>.
         </p>
 
-        <h2>Four more levers, not counted in the total</h2>
+          </div>
+        </details>
+
+        <details class="calc-details">
+          <summary>Other potential benefits — excluded from the estimate</summary>
+          <div class="calc-details-body">
         <p>
           These are real, but the evidence is thinner or the value depends too much on your setup to put a
           number on it for you. We would rather leave them out of the headline than pad it.
@@ -360,44 +385,8 @@
           </p>
         </div>
 
-        <h2 id="discarded">Read this about online calculators</h2>
-        <div class="callout">
-          <p>
-            We went looking for the numbers behind this category and most of them are not real. The
-            famous <em>"$200 per empty appointment slot"</em> and <em>"$150 billion a year"</em> both
-            trace back to a single 2017 trade-magazine opinion piece written by the chief marketing
-            officer of a scheduling vendor, with no study behind it. <em>"Practices miss 42% of calls"</em>
-            comes from a LinkedIn post. <em>"85% of patients never call back"</em> has no source at all.
-            Nearly every savings page you will read today is built on those four numbers. So this one
-            is not: every figure above is either traceable to a primary source or labelled as our own
-            assumption.
-          </p>
-        </div>
-        <p>
-          Here is what we threw out. Each of these appears on competitors' savings pages. We chased
-          every one to its source and the source is not there. If you see them quoted at you, they
-          came from nowhere.
-        </p>
-        <div class="table-scroll">
-          <table class="src-table strike-table">
-            <thead><tr><th>The claim</th><th>What is actually behind it</th></tr></thead>
-            <tbody>
-              <tr><td>"$200 per empty appointment slot"</td><td>A 2017 opinion column by the chief marketing officer of a scheduling vendor. No study, no method, no footnote.</td></tr>
-              <tr><td>"$150 billion a year in missed appointments"</td><td>The same column. Almost every dollar figure in this category descends from these two sentences.</td></tr>
-              <tr><td>"Practices miss 42% of calls"</td><td>A LinkedIn post. No institution, no methodology, no citation. Widely requoted as a study.</td></tr>
-              <tr><td>"85% of patients never call back"</td><td>Vendor blogs citing vendor blogs. No origin.</td></tr>
-              <tr><td>"67% of patients hang up at voicemail and call a competitor"</td><td>Attributed across a dozen sites to a study that does not appear to exist.</td></tr>
-              <tr><td>"41% to 48% of patient calls come after hours"</td><td>Exists only in uncited vendor copy. The real after-hours case does not need it: a practice open 40 hours is closed for roughly three quarters of the week.</td></tr>
-              <tr><td>"$821,000 to $971,000 lost per physician to referral leakage"</td><td>Traces vendor to vendor and dead-ends at a referral-software company's undated page. What is survey-backed: 43% of health system executives say leakage costs them more than 10% of annual revenue, and 19% say more than 20% (Sage Growth Partners, 2018, n=104).</td></tr>
-              <tr><td>"Reminder calls cut no-shows by 20% to 30%"</td><td>A centralized phone reminder system moved no-shows from 16.3% to 15.2%, which the authors called a modest effect, and mailed reminders did nothing measurable (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4714455/" rel="nofollow noopener" target="_blank">BMC, 2016</a>). Cochrane puts SMS reminders at a relative risk of 1.14. One-way reminders are worth a point or two, not twenty. Two-way confirmation and easy rescheduling are where the movement is.</td></tr>
-              <tr><td>"Recover 70% of your missed calls"</td><td>One competitor's stated assumption, sourced to their own deployment data. Our estimator assumes you recover a fraction of the bookable ones, and shows you the arithmetic.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p>
-          We would rather show you a smaller number you can check than a larger one you cannot. If any
-          figure on this page looks wrong to you, tell us and we will fix it or take it down.
-        </p>
+          </div>
+        </details>
 
         <div class="calc-cta" style="margin-top:2.5rem">
           <a class="btn btn-primary btn-lg" href="https://calendar.app.google/j9EysiVHDX7L5wWe7" target="_blank" rel="noopener">Book a 15-minute call</a>

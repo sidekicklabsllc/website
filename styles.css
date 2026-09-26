@@ -367,6 +367,13 @@ footer {
 .consult-services .card h3 { font-size: 1.15rem; }
 @media (max-width: 640px) { .compare-grid { grid-template-columns: 1fr; } }
 .calc-cta { text-align: center; margin-top: 1.5rem; }
+.estimate-note { color: var(--ink-soft); font-size: 0.85rem; margin-top: 1rem; }
+.calc-details { border: 1px solid var(--sand-200); border-radius: 0.9rem; margin-top: 1rem; }
+.calc-details > summary { padding: 1rem 1.2rem; font-weight: 600; cursor: pointer; }
+.calc-details > summary::marker { color: var(--rose-600); }
+.calc-details > summary:focus-visible { outline: 2px solid var(--rose-500); outline-offset: 3px; border-radius: 0.9rem; }
+.calc-details-body { padding: 0 1.2rem 1rem; }
+.calc-details > .chain { margin: 0; }
 .assumptions { margin-top: 3.5rem; }
 .assumptions h2 { font-size: 1.5rem; margin-bottom: 0.6rem; }
 .assumptions p, .assumptions li { color: var(--ink-soft); font-size: 0.95rem; }
@@ -389,6 +396,7 @@ footer {
 }
 .result-sm .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); }
 .result-sm .value { font-family: "Fraunces", Georgia, serif; font-size: 1.7rem; color: var(--ink); margin: 0.25rem 0; }
+.result-sm .result-period { font-family: "Inter", sans-serif; font-size: 0.85rem; white-space: nowrap; }
 .result-sm .sub { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.45; }
 .chain {
   background: var(--sand-100); border-radius: 0.9rem; padding: 1rem 1.2rem; margin-top: 1.2rem;
@@ -486,3 +494,9 @@ footer {
   .tweak-cell { text-align: right; }
   .tweak { width: 3.8rem; }
 }
+
+/* Inline help for estimator choices. */
+.info-button { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; padding: 0; border: 1px solid var(--sand-200); border-radius: 50%; background: #fff; color: var(--rose-600); font: inherit; font-size: 1.1rem; vertical-align: middle; cursor: pointer; }
+.info-button:hover, .info-button[aria-expanded="true"] { background: var(--sand-100); border-color: var(--rose-500); }
+.info-button:focus-visible { outline: 2px solid var(--rose-500); outline-offset: 3px; }
+.info-explanation { margin: -0.4rem 0 1rem; padding: 0.85rem 1rem; border-left: 3px solid var(--rose-500); border-radius: 0.4rem; background: var(--sand-100); color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; }
