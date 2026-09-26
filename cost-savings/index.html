@@ -114,7 +114,7 @@
       <div class="calc-panel">
         <div aria-live="polite">
           <div class="result-big" style="margin-bottom:1.8rem">
-            <div class="label">Estimated contribution opportunity</div>
+            <div class="label">Revenue you are not capturing</div>
             <div class="value" id="r-total">$24,625</div>
             <div class="sub">From one year of missed calls and incoming referrals</div>
             <div class="sub" id="r-total-sub"></div>
@@ -123,17 +123,14 @@
 
         <div class="calc-help">
           <h2>How conservative do you want to be? <button type="button" class="info-button" aria-label="About conservative and midpoint estimates" aria-expanded="false" aria-controls="assumption-help">ⓘ</button></h2>
-          <p class="info-explanation" id="assumption-help" hidden>Conservative uses lower assumptions for missed calls, lost bookings, contribution margin, and referral improvements. Midpoint uses higher assumptions. Both use your practice inputs and the same patient-retention settings.</p>
+          <p class="info-explanation" id="assumption-help" hidden>Midpoint assumes more missed bookings and more successful referral follow-up. See assumptions below.</p>
         </div>
         <div class="preset-row" role="group" aria-label="Assumption set" style="margin-bottom:1.6rem">
           <button type="button" class="preset" data-set="conservative" aria-pressed="true">Conservative</button>
           <button type="button" class="preset" data-set="midpoint" aria-pressed="false">Midpoint</button>
         </div>
 
-        <div class="calc-help">
-          <h2>Your practice <button type="button" class="info-button" aria-label="About practice size" aria-expanded="false" aria-controls="practice-help">ⓘ</button></h2>
-          <p class="info-explanation" id="practice-help" hidden>Choose the range that best matches the providers in your practice. Choose Multi-site if you operate across multiple locations. Then adjust the figures below to match your practice.</p>
-        </div>
+        <h2>Your practice</h2>
 
         <div class="preset-row" role="group" aria-label="Practice size">
           <button type="button" class="preset" data-calls="600" aria-pressed="true">1 to 3 providers</button>
