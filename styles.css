@@ -84,6 +84,8 @@ a:hover { color: var(--rose-700); }
   display: none; margin-left: auto; cursor: pointer;
   font-size: 1.5rem; line-height: 1; color: var(--ink-soft); padding: 0.2rem 0.3rem;
 }
+button.nav-toggle-btn { border: 0; background: transparent; font-family: inherit; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+button.nav-toggle-btn:focus-visible { outline: 2px solid var(--rose-600); outline-offset: 3px; border-radius: 0.3rem; }
 @media (max-width: 640px) {
   .nav-toggle-btn { display: inline-flex; }
   .nav-links {
@@ -95,7 +97,8 @@ a:hover { color: var(--rose-700); }
   }
   .nav-links a { padding: 0.8rem 0; border-top: 1px solid var(--sand-100); }
   .nav-links a:first-child { border-top: none; }
-  .nav-toggle-checkbox:checked ~ .nav-links { display: flex; }
+  .nav-toggle-checkbox:checked ~ .nav-links,
+  button.nav-toggle-btn[aria-expanded="true"] ~ .nav-links { display: flex; }
 }
 
 /* ---------- hero ---------- */
