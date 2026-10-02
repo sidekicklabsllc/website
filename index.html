@@ -304,15 +304,23 @@
   <section id="demo">
     <div class="container narrow demo">
       <p class="kicker">Try her</p>
-      <h2 class="section-title">Call Samantha right now.</h2>
-      <p class="section-sub">Call the demo line for Cedarview Family Medicine. Book a visit, reschedule, or leave a message.</p>
-      <p class="demo-note">Use a made-up name and date of birth when Samantha asks. Please don’t share real patient information.</p>
-      <a class="btn btn-primary btn-lg" href="tel:+13607262645">&#128222; (360) 726-2645</a>
+      <h2 class="section-title">Try Samantha live.</h2>
+      <p class="section-sub">Call Cedarview Family Medicine’s demo practice. Talk to the same system that could answer your calls—book a visit, change an appointment, or leave a message.</p>
+      <div class="demo-prep" aria-labelledby="demo-prep-title">
+        <h3 id="demo-prep-title">Before you call</h3>
+        <p>Try a new patient visit using a made-up name and date of birth, or use one of these sample patients:</p>
+        <dl class="demo-patients">
+          <div><dt>John Doe</dt><dd>Date of birth: January 1, 1979</dd></div>
+          <div><dt>Jane Doe</dt><dd>Date of birth: January 1, 1980</dd></div>
+        </dl>
+        <p class="demo-fictional">Use fictional information throughout the call.</p>
+      </div>
+      <a class="btn btn-primary btn-lg demo-call" href="tel:+13607262645"><span>Call Samantha</span><span class="demo-call-number">(360) 726-2645</span></a>
       <p class="demo-note">Demo calls are limited to a few minutes and a few calls per number per day.</p>
     </div>
     <div class="container board-wrap">
-      <h3 class="board-title">Dr. Mitchell's schedule this week</h3>
-      <p class="board-sub">Book a visit with Samantha and it appears here within a few seconds. Only a first name and last initial are shown, and the calendar is cleared every night.</p>
+      <h3 class="board-title">See your booking appear.</h3>
+      <p class="board-sub">This is Dr. Mitchell’s live demo schedule. Book a visit with Samantha and it appears here within a few seconds. Only a first name and last initial are shown.</p>
       <iframe class="board" src="https://app.samantha-medical.com/demo/board" title="Live demo schedule for Cedarview Family Medicine" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
     </div>
   </section>

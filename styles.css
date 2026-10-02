@@ -318,6 +318,21 @@ footer {
 .demo .section-sub { margin: 0 auto 1.8rem; }
 .btn-lg { font-size: 1.25rem; padding: 1rem 2.2rem; }
 .demo-note { color: var(--ink-faint); font-size: 0.85rem; margin-top: 1rem; }
+.demo-prep { max-width: 580px; margin: 0 auto 2rem; padding: 1.5rem; text-align: left; background: var(--sand-100); border: 1px solid var(--sand-200); border-radius: var(--radius); }
+.demo-prep h3 { font-size: 1.15rem; margin-bottom: 0.65rem; }
+.demo-prep p { color: var(--ink-soft); font-size: 0.95rem; }
+.demo-patients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+.demo-patients dt { font-weight: 600; }
+.demo-patients dd { color: var(--ink-soft); font-size: 0.85rem; }
+.demo-prep .demo-fictional { font-size: 0.85rem; }
+.demo-call { display: inline-flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+.demo-call-number { font-size: 0.95rem; font-weight: 500; }
+#demo .demo-note { color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .demo-patients { grid-template-columns: 1fr; }
+  .demo-prep { padding: 1.25rem; margin-bottom: 1.5rem; }
+  .demo-call { width: 100%; }
+}
 .board-wrap { margin-top: 2.5rem; text-align: left; }
 .board-title { font-size: 1.15rem; margin-bottom: 0.4rem; }
 .board-sub { color: var(--ink-soft); font-size: 0.95rem; max-width: 62ch; margin-bottom: 1rem; }

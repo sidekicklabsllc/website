@@ -1,6 +1,6 @@
 // Savings model for /cost-savings/. Every multiplier below is defended on the page itself,
 // in the "How each number is built" table, with a link to its primary source.
-// Two assumption sets: "conservative" is the default and sits below every published figure.
+// Two assumption sets: "midpoint" is the default; "conservative" offers a lower estimate.
 (function () {
   // Only sourced figures live here. The three assumptions we cannot source (new-patient share,
   // visits per year, years retained) are read from the page instead: they are the same in both sets
@@ -22,7 +22,7 @@
 
   const presets = document.querySelectorAll(".preset[data-calls]");
   const setBtns = document.querySelectorAll(".preset[data-set]");
-  let set = "conservative";
+  let set = "midpoint";
 
   function read(el, fallback) {
     const v = parseFloat(el.value);
