@@ -329,9 +329,15 @@ footer {
 .demo-call-number { font-size: 0.95rem; font-weight: 500; }
 #demo .demo-note { color: var(--ink-soft); }
 @media (max-width: 640px) {
-  .demo-patients { grid-template-columns: 1fr; }
-  .demo-prep { padding: 1.25rem; margin-bottom: 1.5rem; }
-  .demo-call { width: 100%; }
+  #demo { padding-top: 2rem; }
+  #demo .section-title { margin-bottom: 0.65rem; }
+  #demo .section-sub { font-size: 1rem; line-height: 1.5; margin-bottom: 1rem; }
+  .demo-patients { gap: 0.75rem; margin: 0.85rem 0; }
+  .demo-prep { padding: 1rem; margin-bottom: 1.25rem; }
+  .demo-prep h3 { margin-bottom: 0.5rem; }
+  .demo-prep p { line-height: 1.5; }
+  .demo-call { width: 100%; padding: 0.75rem 1rem; }
+  #demo .demo-note { margin-top: 0.75rem; }
 }
 .board-wrap { margin-top: 2.5rem; text-align: left; }
 .board-title { font-size: 1.15rem; margin-bottom: 0.4rem; }
